@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lone Star Energy Group – Weekly Gas Intelligence · Vol. 1, No. 2</title>
+<style>
+/* ===== RESET & BASE ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{font-family:Arial,Helvetica,sans-serif;background:#F5EDD8;color:#2A2A2A;line-height:1.55}
+
+/* ===== LANGUAGE TOGGLE VISIBILITY ===== */
+.es-block  { display: none !important; }
+.es-inline { display: none !important; }
+body.es-active .en-block  { display: none !important; }
+body.es-active .en-inline { display: none !important; }
+body.es-active .es-block  { display: block !important; }
+body.es-active .es-inline { display: inline !important; }
+/* iOS Safari file:// defensive selectors */
+body.es-active  .en-block  { display: none !important; }
+body.es-active  .en-inline { display: none !important; }
+body.es-active  .es-block  { display: block !important; }
+body.es-active  .es-inline { display: inline !important; }
+
+/* ===== LAYOUT ===== */
+.wrapper{max-width:1180px;margin:0 auto;padding:0 24px}
+.section{margin:36px 0}
+h2.sec-title{font-family:Georgia,serif;font-size:1.05rem;font-weight:700;color:#2A2A2A;letter-spacing:.06em;text-transform:uppercase;border-bottom:2px solid #C8841A;padding-bottom:6px;margin-bottom:18px}
+
+/* ===== LANG TOGGLE BAR ===== */
+#lang-bar{background:#2A2A2A;padding:8px 24px;display:flex;align-items:center;justify-content:flex-end;position:sticky;top:0;z-index:100}
+.lb{background:transparent;border:1px solid #C8841A;color:#C8841A;font-family:Arial,Helvetica,sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.08em;padding:4px 14px;border-radius:999px;cursor:pointer;transition:all .2s}
+.lb.active{background:#C8841A;color:#fff}
+.lb+.lb{margin-left:6px}
+
+/* ===== HEADER ===== */
+#site-header{background:#fff;border-bottom:3px solid #C8841A;padding:18px 24px}
+.hdr-logo{background:#fff;padding:6px 10px 6px 0;display:flex;align-items:center}
+.hdr-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.hdr-meta{text-align:right}
+.pub-name{font-family:Georgia,serif;font-size:1.45rem;font-weight:700;color:#2A2A2A;line-height:1.2}
+.hdr-edition{font-size:.78rem;color:#C8841A;font-weight:700;letter-spacing:.07em;margin-top:3px}
+.hdr-dates{font-size:.72rem;color:#555;margin-top:2px}
+
+/* ===== WARNING BAR ===== */
+#warning-bar{background:#C8841A;color:#fff;text-align:center;font-size:.78rem;padding:6px 16px}
+
+/* ===== TICKER ===== */
+#ticker-wrap{background:#F5EDD8;border-top:2px solid #C8841A;border-bottom:1px solid #D8C9A8;overflow:hidden;padding:7px 0}
+.ticker-inner{display:flex;white-space:nowrap;animation:tickerScroll 55s linear infinite}
+.ticker-inner:hover{animation-play-state:paused}
+@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ti{display:inline-block;margin:0 32px;font-family:'Courier New',monospace;font-size:.82rem;color:#2A2A2A}
+.ti-label{color:#C8841A;font-weight:700;margin-right:6px}
+.ti-val{font-weight:700}
+.ti-note{color:#777;font-size:.73rem;margin-left:4px}
+.ti-ctx{color:#999;font-size:.70rem;font-style:italic;margin-left:4px}
+.ti-sep{color:#C8841A;margin:0 14px;opacity:.5}
+
+/* ===== MASTER THESIS ===== */
+#thesis-bar{background:#C8841A;color:#fff;text-align:center;padding:18px 24px}
+.thesis-label{font-size:.68rem;letter-spacing:.14em;font-weight:700;text-transform:uppercase;opacity:.8;margin-bottom:6px;font-family:Arial,Helvetica,sans-serif}
+.thesis-text{font-family:Georgia,serif;font-size:1.15rem;font-weight:700;line-height:1.4;max-width:860px;margin:0 auto}
+.thesis-support{max-width:860px;margin:10px auto 0;font-size:.82rem;opacity:.88;font-style:italic;line-height:1.45}
+
+/* ===== CONTINUITY LAYER ===== */
+#continuity{background:#fff;border-left:3px solid #C8841A;padding:16px 20px;border-radius:0 6px 6px 0;margin-bottom:0}
+#continuity-es{background:#fff;border-left:3px solid #C8841A;padding:16px 20px;border-radius:0 6px 6px 0;margin-bottom:0}
+.cont-items{display:flex;gap:18px;flex-wrap:wrap}
+.cont-item{flex:1;min-width:200px}
+.cont-item-label{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#C8841A;font-weight:700;margin-bottom:4px}
+.cont-item-val{font-size:.85rem;color:#2A2A2A;line-height:1.4}
+.badge{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.08em;padding:2px 8px;border-radius:3px;text-transform:uppercase;margin-bottom:4px}
+.badge-green{background:#1a7a2e;color:#fff}
+.badge-amber{background:#C8841A;color:#fff}
+.badge-gray{background:#888;color:#fff}
+.badge-red{background:#CC0000;color:#fff}
+.badge-verified{background:#1a7a2e;color:#fff}
+.badge-estimated{background:#C8841A;color:#fff}
+.badge-lowconf{background:#888;color:#fff}
+.badge-unavail{background:#555;color:#fff}
+.badge-conditional{background:#C8841A;color:#fff}
+.badge-directional{background:#777;color:#fff}
+.badge-high{background:#CC0000;color:#fff}
+.badge-moderate{background:#C8841A;color:#fff}
+.badge-monitor{background:#3a6ea5;color:#fff}
+
+/* ===== BASE CASE POSTURE ===== */
+#base-case{background:#F5EDD8;border-left:4px solid #C8841A;padding:18px 22px;border-radius:0 8px 8px 0}
+.bc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.bc-field label{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#C8841A;font-weight:700;display:block;margin-bottom:3px}
+.bc-field p{font-size:.86rem;line-height:1.4;color:#2A2A2A}
+.bc-wrong{background:#fff;border:1px solid #D8C9A8;border-radius:6px;padding:10px 14px;margin-top:14px}
+.bc-wrong label{font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:#CC0000;font-weight:700;display:block;margin-bottom:3px}
+.bc-wrong p{font-size:.83rem;color:#2A2A2A}
+
+/* ===== WHO TILES ===== */
+.whos-grid{display:flex;flex-wrap:wrap;gap:12px}
+.who-tile{flex:1;min-width:170px;background:#fff;border-radius:8px;border:1px solid #D8C9A8;padding:14px 16px}
+.who-label{font-size:.8rem;font-weight:700;font-family:Georgia,serif;color:#2A2A2A;margin-bottom:6px}
+.who-desc{font-size:.76rem;color:#444;line-height:1.35;margin-bottom:8px}
+
+/* ===== EXECUTIVE SNAPSHOT ===== */
+.snap-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.snap-card{background:#fff;border-radius:8px;border:1px solid #D8C9A8;padding:18px}
+.snap-badge-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.snap-title{font-family:Georgia,serif;font-size:.96rem;font-weight:700;color:#2A2A2A;margin-bottom:6px}
+.snap-body{font-size:.82rem;color:#333;line-height:1.4;margin-bottom:8px}
+.snap-action{font-size:.76rem;color:#C8841A;font-weight:700;border-top:1px solid #F0E8D0;padding-top:7px;margin-top:7px}
+
+/* ===== WEEKLY SIGNALS TABLE ===== */
+.signals-table{width:100%;border-collapse:collapse;font-size:.82rem}
+.signals-table th{background:#2A2A2A;color:#C8841A;font-family:Georgia,serif;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;padding:9px 12px;text-align:left}
+.signals-table td{padding:9px 12px;border-bottom:1px solid #E8DCC8;vertical-align:top;color:#2A2A2A}
+.signals-table tr:nth-child(even) td{background:#FDFAF5}
+.signals-table tr:last-child td{border-bottom:none}
+.sig-ctx{font-size:.70rem;color:#888;font-style:italic}
+
+/* ===== PRICE BOARD ===== */
+.pb-cards{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:20px}
+.pb-card{flex:1;min-width:220px;background:#2A2A2A;color:#E8DCC8;border-radius:8px;padding:18px}
+.pb-card.light{background:#fff;color:#2A2A2A;border:1px solid #D8C9A8}
+.pbc-label{font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:#C8841A;font-weight:700;margin-bottom:4px}
+.pbc-val{font-family:'Courier New',monospace;font-size:1.6rem;font-weight:700;color:#C8841A;line-height:1.1}
+.pbc-val.secondary{font-size:1.05rem;color:#E8A040}
+.pbc-wow{font-size:.78rem;margin-top:4px;opacity:.8}
+.pbc-note{font-size:.73rem;margin-top:6px;opacity:.75;line-height:1.35;font-style:italic}
+.pbc-status{margin-top:6px}
+
+.pb-table{width:100%;border-collapse:collapse;font-size:.80rem}
+.pb-table th{background:#2A2A2A;color:#C8841A;font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;padding:8px 11px;text-align:left}
+.pb-table td{padding:8px 11px;border-bottom:1px solid #E8DCC8;vertical-align:top;color:#2A2A2A}
+.pb-table tr:nth-child(even) td{background:#FDFAF5}
+
+/* ===== EDITORIAL PULSE ===== */
+.pulse-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.pulse-card{background:#fff;border-radius:8px;border-left:3px solid #C8841A;padding:16px}
+.pulse-what{font-family:Georgia,serif;font-size:.9rem;font-weight:700;color:#2A2A2A;margin-bottom:5px}
+.pulse-why{font-size:.82rem;color:#333;line-height:1.38;margin-bottom:6px}
+.pulse-who{font-size:.74rem;color:#C8841A;font-weight:700}
+
+/* ===== SPOTLIGHT ===== */
+.spotlight-item{background:#fff;border-radius:8px;border:1px solid #D8C9A8;padding:18px 20px;margin-bottom:14px}
+.sl-headline{font-family:Georgia,serif;font-size:1rem;font-weight:700;color:#2A2A2A;margin-bottom:6px}
+.sl-body{font-size:.83rem;color:#333;line-height:1.42;margin-bottom:8px}
+.sl-meaning{font-size:.80rem;background:#F5EDD8;border-left:3px solid #C8841A;padding:7px 12px;border-radius:0 4px 4px 0;margin-bottom:8px}
+.sl-meaning label{font-size:.63rem;text-transform:uppercase;letter-spacing:.09em;color:#C8841A;font-weight:700;display:block;margin-bottom:2px}
+.sl-footer{display:flex;flex-wrap:wrap;gap:14px;font-size:.73rem;color:#777}
+.sl-footer span{font-weight:700;color:#555}
+
+/* ===== DELIVERED GAS ===== */
+.deliv-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.deliv-card{background:#1C1208;color:#E8DCC8;border-radius:8px;padding:18px}
+.deliv-origin{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#C8841A;font-weight:700;margin-bottom:6px}
+.deliv-logic{font-size:.83rem;line-height:1.4;margin-bottom:8px}
+.deliv-who{font-size:.76rem;color:#E8A040;margin-bottom:6px}
+.deliv-limit{font-size:.73rem;color:#bbb;font-style:italic;border-top:1px solid #3a2a15;padding-top:7px;margin-top:7px}
+.conf-badge{display:inline-block;font-size:.60rem;font-weight:700;letter-spacing:.08em;padding:2px 7px;border-radius:3px;text-transform:uppercase;margin-top:5px}
+.conf-low{background:#555;color:#eee}
+.conf-med{background:#7a5a10;color:#ffe0a0}
+.conf-high{background:#1a7a2e;color:#fff}
+
+/* ===== INFRA TABLE ===== */
+.infra-table{width:100%;border-collapse:collapse;font-size:.81rem}
+.infra-table th{background:#2A2A2A;color:#C8841A;font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;padding:8px 12px;text-align:left}
+.infra-table td{padding:9px 12px;border-bottom:1px solid #E8DCC8;vertical-align:top;color:#2A2A2A}
+.infra-table tr:nth-child(even) td{background:#FDFAF5}
+
+/* ===== CHARTS ===== */
+.chart-wrap{background:#fff;border-radius:8px;border:1px solid #D8C9A8;padding:20px}
+.chart-title{font-family:Georgia,serif;font-size:.95rem;font-weight:700;color:#2A2A2A;margin-bottom:4px}
+.chart-sub{font-size:.72rem;color:#777;margin-bottom:14px}
+
+/* ===== WHERE MONEY IS MADE ===== */
+#wmim{background:#2A2A2A;color:#E8DCC8;padding:28px 24px;border-radius:8px}
+#wmim h2{color:#C8841A;font-family:Georgia,serif;border-bottom:1px solid #444;padding-bottom:8px;margin-bottom:20px;font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase}
+.opp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+.opp-card{background:#1C1208;border-radius:8px;padding:18px;border:1px solid #3a2a15}
+.opp-title{font-family:Georgia,serif;font-size:.98rem;font-weight:700;color:#E8DCC8;margin-bottom:10px}
+.opp-field{margin-bottom:6px}
+.opp-field label{font-size:.62rem;text-transform:uppercase;letter-spacing:.09em;color:#C8841A;font-weight:700;display:block;margin-bottom:2px}
+.opp-field p{font-size:.80rem;color:#E8DCC8;line-height:1.35}
+.rma-block{border-radius:5px;padding:9px 12px;margin:10px 0}
+.rma-block.high-barrier{border:1.5px solid #CC0000}
+.rma-block.mod-barrier{border:1.5px solid #C8841A}
+.rma-block.low-barrier{border:1.5px solid #888}
+.rma-label{font-size:.60rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:3px}
+.rma-label.high-barrier{color:#CC0000}
+.rma-label.mod-barrier{color:#C8841A}
+.rma-label.low-barrier{color:#aaa}
+.rma-text{font-size:.79rem;color:#E8DCC8;line-height:1.35}
+.gate-row{display:flex;gap:12px;margin-top:10px;flex-wrap:wrap}
+.gate-item{flex:1;min-width:140px;background:#2A2A2A;border-radius:5px;padding:8px 10px}
+.gate-item label{font-size:.60rem;text-transform:uppercase;letter-spacing:.09em;font-weight:700;color:#C8841A;display:block;margin-bottom:2px}
+.gate-item p{font-size:.78rem;color:#E8DCC8;line-height:1.3}
+.opp-timing{margin-top:8px;font-size:.74rem;color:#aaa}
+.opp-fail{margin-top:6px;font-size:.75rem;color:#e07070;font-style:italic}
+
+/* ===== WHAT COULD BREAK ===== */
+.break-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.break-card{background:#fff;border-radius:8px;border-left:3px solid #CC0000;padding:15px}
+.break-trigger{font-family:Georgia,serif;font-size:.9rem;font-weight:700;color:#2A2A2A;margin-bottom:5px}
+.break-body{font-size:.80rem;color:#333;line-height:1.38;margin-bottom:6px}
+.break-monitor{font-size:.73rem;color:#777;font-style:italic}
+
+/* ===== DATA GAPS ===== */
+.data-gaps{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.gap-badge{font-size:.68rem;font-weight:700;letter-spacing:.07em;padding:3px 9px;border-radius:3px;text-transform:uppercase}
+.gap-data{background:#444;color:#ddd}
+.gap-access{background:#7a2020;color:#fdd}
+.gap-comp{background:#555;color:#ccc}
+.gap-timing{background:#3a5080;color:#cce}
+
+/* ===== TRADE OF THE WEEK + RISK RADAR ===== */
+.totw-grid{display:grid;grid-template-columns:3fr 2fr;gap:20px}
+.totw-card{background:#fff;border-radius:8px;border:1px solid #D8C9A8;padding:20px}
+.totw-label{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#C8841A;font-weight:700;margin-bottom:8px}
+.totw-title{font-family:Georgia,serif;font-size:1.05rem;font-weight:700;color:#2A2A2A;margin-bottom:10px}
+.totw-field{margin-bottom:8px}
+.totw-field label{font-size:.62rem;text-transform:uppercase;letter-spacing:.09em;color:#888;font-weight:700;display:block;margin-bottom:2px}
+.totw-field p{font-size:.82rem;color:#2A2A2A;line-height:1.38}
+.totw-rma{background:#FFF8EE;border:1.5px solid #CC0000;border-radius:5px;padding:9px 12px;margin:10px 0}
+.totw-rma label{font-size:.60rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:#CC0000;display:block;margin-bottom:3px}
+.totw-rma p{font-size:.80rem;color:#2A2A2A}
+.totw-economics{background:#F5EDD8;border-radius:5px;padding:8px 12px;margin-top:10px;font-size:.78rem;color:#555;font-style:italic}
+.conviction-row{display:flex;gap:12px;margin-top:10px}
+.conv-item label{font-size:.60rem;text-transform:uppercase;letter-spacing:.09em;color:#888;font-weight:700;display:block;margin-bottom:2px}
+.conv-item p{font-size:.80rem;font-weight:700;color:#2A2A2A}
+
+.risk-card{background:#2A2A2A;border-radius:8px;padding:15px;margin-bottom:10px}
+.risk-card:last-child{margin-bottom:0}
+.risk-type{font-size:.60rem;text-transform:uppercase;letter-spacing:.1em;color:#C8841A;font-weight:700;margin-bottom:4px}
+.risk-title{font-family:Georgia,serif;font-size:.88rem;font-weight:700;color:#E8DCC8;margin-bottom:5px}
+.risk-body{font-size:.78rem;color:#bbb;line-height:1.35}
+
+/* ===== LONE STAR INSIGHT ===== */
+#lsi{background:#1C1208;color:#E8DCC8;border-radius:8px;padding:24px}
+.lsi-bold{font-family:Georgia,serif;font-size:1.1rem;font-weight:700;color:#C8841A;border-left:4px solid #C8841A;padding-left:14px;margin-bottom:16px;line-height:1.4}
+.lsi-insights{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.lsi-insight{background:#2A2A2A;border-radius:6px;padding:14px}
+.lsi-insight-title{font-size:.70rem;text-transform:uppercase;letter-spacing:.1em;color:#C8841A;font-weight:700;margin-bottom:5px}
+.lsi-insight-body{font-size:.82rem;line-height:1.38;color:#E8DCC8}
+.lsi-takeaway{background:#2A2A2A;border-left:3px solid #C8841A;border-radius:0 6px 6px 0;padding:12px 16px;margin-bottom:16px;font-size:.83rem;color:#E8DCC8;line-height:1.4}
+
+/* ===== FORWARD VIEW TABLE ===== */
+.fwd-table{width:100%;border-collapse:collapse;font-size:.80rem}
+.fwd-table th{background:#2A2A2A;color:#C8841A;font-size:.66rem;letter-spacing:.07em;text-transform:uppercase;padding:8px 11px;text-align:left}
+.fwd-table td{padding:8px 11px;border-bottom:1px solid #3a2a15;vertical-align:top;color:#E8DCC8}
+.fwd-table tr:nth-child(even) td{background:#221507}
+
+/* ===== CTA ===== */
+#cta{background:#F5EDD8;text-align:center;padding:22px 24px;font-size:.85rem;color:#555;border-top:1px solid #D8C9A8;border-bottom:1px solid #D8C9A8}
+#cta a{color:#C8841A;text-decoration:none;font-weight:700}
+
+/* ===== FOOTER ===== */
+#footer{background:#2A2A2A;color:#bbb;padding:22px 24px;border-top:3px solid #C8841A;font-size:.76rem;line-height:1.6;text-align:center}
+#footer a{color:#C8841A;text-decoration:none}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .bc-grid{grid-template-columns:1fr}
+  .deliv-cards{grid-template-columns:1fr}
+  .totw-grid{grid-template-columns:1fr}
+  .opp-grid{grid-template-columns:1fr}
+  .lsi-insights{grid-template-columns:1fr}
+  .pb-card{min-width:160px}
+}
+@media(max-width:600px){
+  html{font-size:15px}
+  .hdr-inner{flex-direction:column;align-items:center;text-align:center}
+  .hdr-meta{text-align:center}
+  .cont-items{flex-direction:column}
+  .bc-grid{grid-template-columns:1fr}
+  .whos-grid{flex-direction:column}
+  .who-tile{min-width:100%}
+  .snap-grid{grid-template-columns:1fr}
+  .pb-cards{flex-direction:column}
+  .pb-card{min-width:100%}
+  .pulse-grid{grid-template-columns:1fr}
+  .deliv-cards{grid-template-columns:1fr}
+  .break-grid{grid-template-columns:1fr}
+  .opp-grid{grid-template-columns:1fr}
+  .gate-row{flex-direction:column}
+  .totw-grid{grid-template-columns:1fr}
+  .lsi-insights{grid-template-columns:1fr}
+  .section{margin:24px 0}
+  #wmim{padding:16px}
+  .signals-table,.pb-table,.infra-table,.fwd-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .signals-table td,.pb-table td,.infra-table td,.fwd-table td{white-space:normal;min-width:100px}
+  .data-gaps{flex-wrap:wrap}
+  #footer{padding:16px;font-size:.74rem}
+  .conv-item{flex:1;min-width:100px}
+}
+@media(max-width:400px){
+  html{font-size:14px}
+  .pub-name{font-size:1.2rem}
+  .thesis-text{font-size:1rem}
+  .pbc-val{font-size:1.3rem}
+  .ti{font-size:.76rem}
+}
+</style>
+</head>
+<body>
+
+<!-- LANGUAGE TOGGLE BAR -->
+<div id="lang-bar">
+  <button class="lb active" id="en-btn" onclick="setLang('en')">EN</button>
+  <button class="lb" id="es-btn" onclick="setLang('es')">ES</button>
+</div>
+
+<!-- HEADER -->
+<header id="site-header">
+  <div class="hdr-inner">
+    <div class="hdr-logo">
+      <img src="data:image/jpeg;base64,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4NsLDwTfaW0nlr4jXxE0UDQ/wuYWiMqcAnYN3XG4gE1+tH/BNr9hfwt/wT6/Zp074GaLrn9tao9xJqHijxE1qITqWoS43uEydkagLGiliVSNcknJPvoiUAgdD2oSMJ0r1syz/Ms1pRpV5K0fI8jKuGssyevKrQTvLuOooorxT6AKKOc+1FABRRRQAUUUUAFFFFABRRRQAmfmx7UtGOc0UAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRR+FGfagAooooAKO+aKKACiiigAooooAKKKKACiiigAooooAKKKOe1ABRRz3NFABRjnNFFABQRmiigAooooAKKKKACiiigAooooAKKKKACkBBOAaKKAAsOQO1JuyuT69qKKAFA75NLRRQAY5zRRRQAUUUUAFIcY5OKKKADAPRj+dAGO5oooAG7c96WiigAooooAKKKKAAjNJgjpj8qKKADBPU/lRt/2jRRQAvOfaiiigAooooACQOtJvX1oooAN6+tGQxwDRRQAHK8gk0ozjmiigAooooAKCQOtFFACblPelyPWiigApCcY+tFFAC0UUUAFFFFABSZOcD0oooACSOpH5UZ3cbvyoooANuP4jS496KKACiiigAoJA60UUAJvX1oDA9DRRQAEEnrxQvTOTRRQAtFFFABRRRQAUZA6miigBpZScbqMqP4zRRQAoIPRjS496KKACiiigAooooATPzY9qXntRRQAhBPekGc4DZPvRRQAo3d8UtFFABRRRQB//2Q==" alt="Lone Star Energy Group" style="height:60px;width:auto;display:block;">
+    </div>
+    <div class="hdr-meta">
+      <div class="en-inline pub-name">Weekly Gas Intelligence</div>
+      <div class="es-inline pub-name">Inteligencia Semanal de Gas</div>
+      <div class="hdr-edition">Vol. 1 &middot; No. 2 &middot; <span class="en-inline">Lone Star Energy Group</span><span class="es-inline">Lone Star Energy Group</span></div>
+      <div class="en-inline hdr-dates">Published Tuesday, April 14, 2026 &middot; Week covered: April 7 &ndash; April 13, 2026</div>
+      <div class="es-inline hdr-dates">Publicado el martes 14 de abril de 2026 &middot; Semana cubierta: del 7 al 13 de abril de 2026</div>
+    </div>
+  </div>
+</header>
+
+<!-- WARNING BAR -->
+<div id="warning-bar">
+  <span class="en-inline">Dataset generated before official Monday 6:00 PM close. Monday afternoon developments may not be reflected. Treat late session signals as potentially incomplete.</span>
+  <span class="es-inline">Conjunto de datos generado antes del cierre oficial del lunes a las 6:00 PM. Los desarrollos de la tarde del lunes pueden no estar reflejados. Trate las señales de sesión tardía como potencialmente incompletas.</span>
+</div>
+
+<!-- TICKER BAR -->
+<div id="ticker-wrap">
+  <div class="ticker-inner" id="ticker-en">
+    <span class="ti"><span class="ti-label">WAHA CASH</span><span class="ti-val">NEGATIVE</span><span class="ti-note">NO COMPARABLE PRINT AVAILABLE</span><span class="ti-note" style="color:#C8841A">&bull; LOW CONF.</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">HENRY HUB SPOT</span><span class="ti-val">$2.78/MMBtu</span><span class="ti-note">Apr 10 &middot; &darr; $0.08 WoW</span><span class="ti-note" style="color:#1a7a2e">&bull; VERIFIED</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">WAHA vs HH BASIS</span><span class="ti-val">DEEPLY NEGATIVE (ESTIMATED)</span><span class="ti-note">directional only</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">U.S. EXPORTS TO MX</span><span class="ti-val">6.1 Bcf/d avg</span><span class="ti-ctx">Jan 2026 &middot; structural context only</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">U.S. STORAGE</span><span class="ti-val">1,911 Bcf</span><span class="ti-note">+50 Bcf WoW</span><span class="ti-note" style="color:#1a7a2e">&bull; VERIFIED</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">CENAGAS MAC 2026C2</span><span class="ti-val">OPEN</span><span class="ti-note">deadline Apr 27</span><span class="ti-note" style="color:#1a7a2e">&bull; VERIFIED</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">GULF COAST EXPRESS EXP.</span><span class="ti-val">MID-2026</span><span class="ti-ctx">project timing &middot; not yet in service</span></span>
+    <span class="ti-sep">//</span>
+    <!-- repeat for seamless loop -->
+    <span class="ti"><span class="ti-label">WAHA CASH</span><span class="ti-val">NEGATIVE</span><span class="ti-note">NO COMPARABLE PRINT AVAILABLE</span><span class="ti-note" style="color:#C8841A">&bull; LOW CONF.</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">HENRY HUB SPOT</span><span class="ti-val">$2.78/MMBtu</span><span class="ti-note">Apr 10 &middot; &darr; $0.08 WoW</span><span class="ti-note" style="color:#1a7a2e">&bull; VERIFIED</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">WAHA vs HH BASIS</span><span class="ti-val">DEEPLY NEGATIVE (ESTIMATED)</span><span class="ti-note">directional only</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">U.S. EXPORTS TO MX</span><span class="ti-val">6.1 Bcf/d avg</span><span class="ti-ctx">Jan 2026 &middot; structural context only</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">U.S. STORAGE</span><span class="ti-val">1,911 Bcf</span><span class="ti-note">+50 Bcf WoW</span><span class="ti-note" style="color:#1a7a2e">&bull; VERIFIED</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">CENAGAS MAC 2026C2</span><span class="ti-val">OPEN</span><span class="ti-note">deadline Apr 27</span><span class="ti-note" style="color:#1a7a2e">&bull; VERIFIED</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">GULF COAST EXPRESS EXP.</span><span class="ti-val">MID-2026</span><span class="ti-ctx">project timing &middot; not yet in service</span></span>
+    <span class="ti-sep">//</span>
+  </div>
+  <div class="ticker-inner es-block" id="ticker-es" style="margin-top:4px">
+    <span class="ti"><span class="ti-label">WAHA CASH</span><span class="ti-val">NEGATIVO</span><span class="ti-note">SIN PRECIO COMPARABLE DISPONIBLE</span><span class="ti-note" style="color:#C8841A">&bull; BAJA CONF.</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">HENRY HUB SPOT</span><span class="ti-val">$2.78/MMBtu</span><span class="ti-note">10 abr &middot; &darr; $0.08 sem.</span><span class="ti-note" style="color:#1a7a2e">&bull; VERIFICADO</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">BASE WAHA vs HH</span><span class="ti-val">MUY NEGATIVA (ESTIMADA)</span><span class="ti-note">solo direccional</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">EXPORTACIONES EE.UU.-MX</span><span class="ti-val">6.1 Bcf/d prom</span><span class="ti-ctx">ene 2026 &middot; contexto estructural</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">ALMACENAMIENTO EE.UU.</span><span class="ti-val">1,911 Bcf</span><span class="ti-note">+50 Bcf sem.</span><span class="ti-note" style="color:#1a7a2e">&bull; VERIFICADO</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">CENAGAS MAC 2026C2</span><span class="ti-val">ABIERTO</span><span class="ti-note">plazo 27 abr</span><span class="ti-note" style="color:#1a7a2e">&bull; VERIFICADO</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">EXPANSIÓN GULF COAST EXPRESS</span><span class="ti-val">MED. 2026</span><span class="ti-ctx">calendario de proyecto &middot; no en servicio</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">WAHA CASH</span><span class="ti-val">NEGATIVO</span><span class="ti-note">SIN PRECIO COMPARABLE DISPONIBLE</span><span class="ti-note" style="color:#C8841A">&bull; BAJA CONF.</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">HENRY HUB SPOT</span><span class="ti-val">$2.78/MMBtu</span><span class="ti-note">10 abr &middot; &darr; $0.08 sem.</span><span class="ti-note" style="color:#1a7a2e">&bull; VERIFICADO</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">BASE WAHA vs HH</span><span class="ti-val">MUY NEGATIVA (ESTIMADA)</span><span class="ti-note">solo direccional</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">EXPORTACIONES EE.UU.-MX</span><span class="ti-val">6.1 Bcf/d prom</span><span class="ti-ctx">ene 2026 &middot; contexto estructural</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">ALMACENAMIENTO EE.UU.</span><span class="ti-val">1,911 Bcf</span><span class="ti-note">+50 Bcf sem.</span><span class="ti-note" style="color:#1a7a2e">&bull; VERIFICADO</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">CENAGAS MAC 2026C2</span><span class="ti-val">ABIERTO</span><span class="ti-note">plazo 27 abr</span><span class="ti-note" style="color:#1a7a2e">&bull; VERIFICADO</span></span>
+    <span class="ti-sep">//</span>
+    <span class="ti"><span class="ti-label">EXPANSIÓN GULF COAST EXPRESS</span><span class="ti-val">MED. 2026</span><span class="ti-ctx">calendario de proyecto &middot; no en servicio</span></span>
+    <span class="ti-sep">//</span>
+  </div>
+</div>
+
+<!-- MASTER THESIS -->
+<div id="thesis-bar">
+  <div class="en-block">
+    <div class="thesis-label">Master Thesis</div>
+    <div class="thesis-text">Permian gas distress remains the dominant commercial signal: access controls value, not benchmark price.</div>
+    <div class="thesis-support">Henry Hub softened while Waha stayed negative &mdash; the constraint is evacuation, not national scarcity. Storage moved further above year-ago and five-year averages, reinforcing a prompt-market bias. Distressed basin gas converts to value only for participants who already control a route out.</div>
+  </div>
+  <div class="es-block">
+    <div class="thesis-label">Tesis Maestra</div>
+    <div class="thesis-text">El deterioro del gas en el P&eacute;rmico sigue siendo la se&ntilde;al comercial dominante: el acceso controla el valor, no el precio de referencia.</div>
+    <div class="thesis-support">El Henry Hub cedi&oacute; mientras el Waha se mantuvo negativo &mdash; la restricci&oacute;n es la evacuaci&oacute;n de la cuenca, no la escasez nacional. El almacenamiento se alej&oacute; a&uacute;n m&aacute;s de los niveles del a&ntilde;o anterior y del promedio de cinco a&ntilde;os, reforzando un sesgo de mercado a corto plazo. El gas de cuenca con precios deteriorados convierte valor solo para participantes que ya controlan una ruta de salida.</div>
+  </div>
+</div>
+
+<div class="wrapper">
+
+<!-- CONTINUITY LAYER -->
+<div class="section">
+  <div class="en-block">
+    <h2 class="sec-title">Continuity: What Changed Since Last Week</h2>
+    <div id="continuity">
+      <div class="cont-items">
+        <div class="cont-item">
+          <div class="cont-item-label">Thesis Status</div>
+          <div class="badge badge-amber">UPDATED</div>
+          <div class="cont-item-val">This is Vol. 1, No. 2 &mdash; the first continuity tracking cycle. No prior internal dataset exists for direct comparison. Waha remained negative and storage shifted further into a looser prompt balance, consistent with the structural thesis established in the inaugural edition.</div>
+        </div>
+        <div class="cont-item">
+          <div class="cont-item-label">What Supported It This Week</div>
+          <div class="cont-item-val">A 50 Bcf injection pushed storage above year-ago and five-year averages. Henry Hub spot fell week-over-week. Waha stayed negative, with further distress early in the week.</div>
+        </div>
+        <div class="cont-item">
+          <div class="cont-item-label">New Variable This Week</div>
+          <div class="cont-item-val">The CENAGAS MAC 2026C2 capacity process is open through April 27. Mexico access planning now has a live administrative clock &mdash; a time-bound variable that did not carry the same urgency prior to this reporting cycle.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="es-block">
+    <h2 class="sec-title">Continuidad: qu&eacute; cambi&oacute; desde la semana pasada</h2>
+    <div id="continuity-es">
+      <div class="cont-items">
+        <div class="cont-item">
+          <div class="cont-item-label">Estado de la Tesis</div>
+          <div class="badge badge-amber">ACTUALIZADA</div>
+          <div class="cont-item-val">Esta es la edici&oacute;n Vol. 1, N&uacute;m. 2 &mdash; el primer ciclo de seguimiento de continuidad. No existe un conjunto de datos interno previo para comparaci&oacute;n directa. El Waha se mantuvo negativo y el almacenamiento se desplaz&oacute; hacia un balance m&aacute;s holgado, en l&iacute;nea con la tesis estructural establecida en la edici&oacute;n inaugural.</div>
+        </div>
+        <div class="cont-item">
+          <div class="cont-item-label">Qu&eacute; la Respald&oacute; Esta Semana</div>
+          <div class="cont-item-val">Una inyecci&oacute;n de 50 Bcf llev&oacute; el almacenamiento por encima del nivel del a&ntilde;o anterior y del promedio de cinco a&ntilde;os. El precio spot del Henry Hub baj&oacute; semana a semana. El Waha se mantuvo negativo, con mayor deterioro a principios de la semana.</div>
+        </div>
+        <div class="cont-item">
+          <div class="cont-item-label">Nueva Variable Esta Semana</div>
+          <div class="cont-item-val">El proceso MAC 2026C2 de CENAGAS est&aacute; abierto hasta el 27 de abril. La planificaci&oacute;n de acceso a M&eacute;xico ahora tiene un reloj administrativo activo &mdash; una variable con fecha l&iacute;mite que no ten&iacute;a la misma urgencia en el ciclo de reporte anterior.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BASE CASE POSTURE -->
+<div class="section">
+  <div class="en-block">
+    <h2 class="sec-title">Base Case Posture</h2>
+    <div id="base-case">
+      <div class="bc-grid">
+        <div class="bc-field">
+          <label>Recommended Stance</label>
+          <p>Stay prompt, stay access-focused. Do not assume cheap upstream gas will pass through into Mexico without verified path rights.</p>
+        </div>
+        <div class="bc-field">
+          <label>Best Positioned Participant</label>
+          <p>Cross-border marketers and transport holders with firm Permian or South Texas path optionality.</p>
+        </div>
+        <div class="bc-field">
+          <label>Primary Decision Bias</label>
+          <p>Protect route access first, price second.</p>
+        </div>
+        <div class="bc-field">
+          <label>Why This Is the Base Case</label>
+          <p>Henry Hub is soft, storage is comfortable, and the most visible price dislocation remains trapped in Permian basis. Physical path control is more valuable than directional benchmark conviction this week.</p>
+        </div>
+      </div>
+      <div class="bc-wrong">
+        <label>What Would Make This Posture Wrong</label>
+        <p>A verified operational relief event, a material tightening in next storage data, or confirmed route-level congestion relief that lifts Permian netbacks and changes prompt capture logic.</p>
+      </div>
+    </div>
+  </div>
+  <div class="es-block">
+    <h2 class="sec-title">Postura Base</h2>
+    <div id="base-case-es" style="background:#F5EDD8;border-left:4px solid #C8841A;padding:18px 22px;border-radius:0 8px 8px 0">
+      <div class="bc-grid">
+        <div class="bc-field">
+          <label>Postura Recomendada</label>
+          <p>Mantener enfoque en el mercado inmediato y en el acceso f&iacute;sico. No asumir que el gas barato del P&eacute;rmico llegar&aacute; a M&eacute;xico sin derechos de ruta verificados.</p>
+        </div>
+        <div class="bc-field">
+          <label>Participante Mejor Posicionado</label>
+          <p>Comercializadores transfronterizos y tenedores de transporte con opcionalidad de ruta firme desde el P&eacute;rmico o el Sur de Texas.</p>
+        </div>
+        <div class="bc-field">
+          <label>Sesgo de Decisi&oacute;n Principal</label>
+          <p>Proteger el acceso a la ruta primero, el precio despu&eacute;s.</p>
+        </div>
+        <div class="bc-field">
+          <label>Por Qu&eacute; Esta Es la Postura Base</label>
+          <p>El Henry Hub est&aacute; d&eacute;bil, el almacenamiento es holgado, y la dislocaci&oacute;n de precios m&aacute;s visible sigue atrapada en la base del P&eacute;rmico. El control f&iacute;sico de rutas vale m&aacute;s que una posici&oacute;n de precio de referencia esta semana.</p>
+        </div>
+      </div>
+      <div class="bc-wrong">
+        <label>Qu&eacute; Invalidar&iacute;a Esta Postura</label>
+        <p>Un evento operativo de alivio verificado, un ajuste significativo en los pr&oacute;ximos datos de almacenamiento, o confirmaci&oacute;n de alivio de congesti&oacute;n a nivel de ruta que mejore los m&aacute;rgenes netos del P&eacute;rmico y cambie la l&oacute;gica de captura inmediata.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHO THIS MATTERS FOR -->
+<div class="section">
+  <div class="en-block">
+    <h2 class="sec-title">Who This Matters For</h2>
+    <div class="whos-grid">
+      <div class="who-tile">
+        <div class="who-label">Permian Upstream Teams</div>
+        <div class="who-desc">Remain most exposed to trapped basis weakness; benchmark softness does not solve evacuation constraints.</div>
+        <span class="badge badge-high">HIGH</span>
+      </div>
+      <div class="who-tile">
+        <div class="who-label">Cross-Border Marketers</div>
+        <div class="who-desc">Among the few who can convert Permian distress into optionality &mdash; but only with path rights already in hand.</div>
+        <span class="badge badge-high">HIGH</span>
+      </div>
+      <div class="who-tile">
+        <div class="who-label">Firm Transport Holders</div>
+        <div class="who-desc">Transport rights carry premium value in an access-constrained week. Monetization opportunity is active.</div>
+        <span class="badge badge-high">HIGH</span>
+      </div>
+      <div class="who-tile">
+        <div class="who-label">Industrial Gas Buyers, Mexico</div>
+        <div class="who-desc">May see improved procurement conversations, but delivered relief depends on marketer structure and route access.</div>
+        <span class="badge badge-moderate">MODERATE</span>
+      </div>
+      <div class="who-tile">
+        <div class="who-label">Benchmark Traders</div>
+        <div class="who-desc">Soft Henry Hub and comfortable storage reduce urgency for outright bullish prompt exposure.</div>
+        <span class="badge badge-monitor">MONITOR</span>
+      </div>
+    </div>
+  </div>
+  <div class="es-block">
+    <h2 class="sec-title">A qui&eacute;n le importa esta semana</h2>
+    <div class="whos-grid">
+      <div class="who-tile">
+        <div class="who-label">Equipos de Producci&oacute;n del P&eacute;rmico</div>
+        <div class="who-desc">Son los m&aacute;s expuestos a la debilidad de la base atrapada; la ca&iacute;da del precio de referencia no resuelve las restricciones de evacuaci&oacute;n.</div>
+        <span class="badge badge-high">ALTA</span>
+      </div>
+      <div class="who-tile">
+        <div class="who-label">Comercializadores Transfronterizos</div>
+        <div class="who-desc">Son de los pocos que pueden convertir el deterioro del P&eacute;rmico en opcionalidad, pero solo si ya tienen derechos de ruta.</div>
+        <span class="badge badge-high">ALTA</span>
+      </div>
+      <div class="who-tile">
+        <div class="who-label">Tenedores de Transporte Firme</div>
+        <div class="who-desc">Los derechos de transporte tienen valor premium en una semana donde el acceso es la restricci&oacute;n dominante.</div>
+        <span class="badge badge-high">ALTA</span>
+      </div>
+      <div class="who-tile">
+        <div class="who-label">Compradores Industriales, M&eacute;xico</div>
+        <div class="who-desc">Pueden ver mejores negociaciones de procura, pero el alivio en precio entregado depende de la estructura del comercializador y del acceso a la ruta.</div>
+        <span class="badge badge-moderate">MODERADA</span>
+      </div>
+      <div class="who-tile">
+        <div class="who-label">Operadores de Precio de Referencia</div>
+        <div class="who-desc">El Henry Hub d&eacute;bil y el almacenamiento holgado reducen la urgencia de posiciones alcistas en el mercado inmediato.</div>
+        <span class="badge badge-monitor">SEGUIMIENTO</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXECUTIVE SNAPSHOT -->
+<div class="section">
+  <div class="en-block">
+    <h2 class="sec-title">Executive Snapshot</h2>
+    <div class="snap-grid">
+      <div class="snap-card">
+        <div class="snap-badge-row"><span class="badge badge-verified">VERIFIED</span></div>
+        <div class="snap-title">Storage Injection Confirms Loose Prompt Balance</div>
+        <div class="snap-body">U.S. working gas rose 50 Bcf to 1,911 Bcf for the week ending April 3, moving above both year-ago (1,822 Bcf) and five-year average (1,824 Bcf) reference levels. The injection reinforces a softer near-term backdrop.</div>
+        <div class="snap-action">&rarr; Favor prompt exposure management over aggressive tightening assumptions. Avoid reading Permian distress as a national supply signal.</div>
+      </div>
+      <div class="snap-card">
+        <div class="snap-badge-row"><span class="badge badge-verified">VERIFIED</span></div>
+        <div class="snap-title">Henry Hub Softened Week-Over-Week</div>
+        <div class="snap-body">Henry Hub Louisiana spot was $2.78/MMBtu on April 10, down from $2.86/MMBtu on April 3. Benchmark pricing eased despite an isolated daily spike to $3.04 on April 6. The benchmark ended the week lower.</div>
+        <div class="snap-action">&rarr; Keep purchasing discipline near-term. Do not read Permian distress as a national tightening signal.</div>
+      </div>
+      <div class="snap-card">
+        <div class="snap-badge-row"><span class="badge badge-lowconf">LOW CONFIDENCE</span></div>
+        <div class="snap-title">Waha Remained Negative, More Distressed Early in Week</div>
+        <div class="snap-body">Waha cash stayed negative into the new reporting week and worsened early. No same-day publication-grade comparable print was retrievable this run. Signal is directional only based on Reuters market reporting.</div>
+        <div class="snap-action">&rarr; Recheck firm path value. Do not treat distressed basin gas as freely available supply for downstream delivery.</div>
+      </div>
+      <div class="snap-card">
+        <div class="snap-badge-row"><span class="badge badge-verified">VERIFIED</span></div>
+        <div class="snap-title">CENAGAS MAC 2026C2 Window Remains Open</div>
+        <div class="snap-body">The official capacity solicitation process under MAC 2026C2 remains active through April 27, 2026. This is an administrative clock for SISTRANGAS access planning &mdash; not a confirmation of current-week executable capacity.</div>
+        <div class="snap-action">&rarr; Review applications, counterparties, and route assumptions now. Do not defer until after the window closes.</div>
+      </div>
+    </div>
+  </div>
+  <div class="es-block">
+    <h2 class="sec-title">Resumen Ejecutivo</h2>
+    <div class="snap-grid">
+      <div class="snap-card">
+        <div class="snap-badge-row"><span class="badge badge-verified">VERIFICADO</span></div>
+        <div class="snap-title">La Inyecci&oacute;n de Almacenamiento Confirma Balance Holgado</div>
+        <div class="snap-body">El gas en almacenamiento en EE.UU. aument&oacute; 50 Bcf hasta 1,911 Bcf para la semana que termin&oacute; el 3 de abril, superando los niveles de referencia del a&ntilde;o anterior (1,822 Bcf) y el promedio de cinco a&ntilde;os (1,824 Bcf). La inyecci&oacute;n refuerza un panorama m&aacute;s holgado en el corto plazo.</div>
+        <div class="snap-action">&rarr; Privilegiar la gesti&oacute;n de exposici&oacute;n inmediata sobre supuestos de ajuste agresivo. No interpretar el deterioro del P&eacute;rmico como una se&ntilde;al de escasez nacional.</div>
+      </div>
+      <div class="snap-card">
+        <div class="snap-badge-row"><span class="badge badge-verified">VERIFICADO</span></div>
+        <div class="snap-title">El Henry Hub Baj&oacute; Semana a Semana</div>
+        <div class="snap-body">El precio spot del Henry Hub Luisiana fue de $2.78/MMBtu el 10 de abril, frente a $2.86/MMBtu el 3 de abril. El precio de referencia cedi&oacute; pese a un alza puntual el 6 de abril. Cerr&oacute; la semana por debajo del nivel inicial.</div>
+        <div class="snap-action">&rarr; Mantener disciplina en la procura de corto plazo. No interpretar el deterioro del P&eacute;rmico como una se&ntilde;al de ajuste nacional.</div>
+      </div>
+      <div class="snap-card">
+        <div class="snap-badge-row"><span class="badge badge-lowconf">BAJA CONFIANZA</span></div>
+        <div class="snap-title">El Waha Se Mantuvo Negativo, con Mayor Deterioro a Inicio de Semana</div>
+        <div class="snap-body">El Waha cash se mantuvo en territorio negativo y empeoró a principios de la semana. No se obtuvo un precio comparable de fuente publicada para esta edici&oacute;n. La se&ntilde;al es solo direccional, basada en reportes de Reuters.</div>
+        <div class="snap-action">&rarr; Verificar el valor del transporte firme. No tratar el gas deteriorado de la cuenca como suministro libremente disponible para entrega aguas abajo.</div>
+      </div>
+      <div class="snap-card">
+        <div class="snap-badge-row"><span class="badge badge-verified">VERIFICADO</span></div>
+        <div class="snap-title">La Ventana MAC 2026C2 de CENAGAS Permanece Abierta</div>
+        <div class="snap-body">El proceso oficial de solicitud de capacidad bajo MAC 2026C2 sigue activo hasta el 27 de abril de 2026. Es un reloj administrativo para la planificaci&oacute;n de acceso al SISTRANGAS &mdash; no una confirmaci&oacute;n de capacidad ejecutable en la semana actual.</div>
+        <div class="snap-action">&rarr; Revisar solicitudes, contrapartes y supuestos de ruta ahora. No diferir hasta que cierre la ventana.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WEEKLY COMMERCIAL SIGNALS -->
+<div class="section">
+  <div class="en-block">
+    <h2 class="sec-title">Weekly Commercial Signals</h2>
+    <table class="signals-table">
+      <thead>
+        <tr><th>Signal</th><th>Current Level</th><th>WoW Change</th><th>Why It Matters</th><th>Who Should Act</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Waha Cash Price</strong></td>
+          <td>NEGATIVE<br><span class="sig-ctx">directional only &bull; no pub-grade print</span></td>
+          <td>More distressed early in week</td>
+          <td>Access remains the dominant constraint. Basin gas cannot be assumed freely available.</td>
+          <td>Permian producers, cross-border marketers, transport holders</td>
+        </tr>
+        <tr>
+          <td><strong>Henry Hub Spot</strong></td>
+          <td>$2.78/MMBtu<br><span class="sig-ctx">Apr 10 &bull; VERIFIED</span></td>
+          <td>&darr; $0.08</td>
+          <td>Soft benchmark lowers the value of outright bullish prompt exposure.</td>
+          <td>Industrial buyers, procurement teams, marketers</td>
+        </tr>
+        <tr>
+          <td><strong>U.S. Working Gas in Storage</strong></td>
+          <td>1,911 Bcf<br><span class="sig-ctx">wk. ending Apr 3 &bull; VERIFIED</span></td>
+          <td>+50 Bcf</td>
+          <td>Above year-ago and 5yr avg. Comfortable balance weakens the tightness narrative.</td>
+          <td>Gas buyers, benchmark traders, industrial procurement teams</td>
+        </tr>
+        <tr>
+          <td><strong>U.S. Exports to Mexico</strong></td>
+          <td>6.1 Bcf/d avg<br><span class="sig-ctx">Jan 2026 &bull; structural context only</span></td>
+          <td>Not comparable</td>
+          <td>Confirms structural dependence. Does not describe current-week corridor conditions.</td>
+          <td>Cross-border strategists, medium-term planners</td>
+        </tr>
+        <tr>
+          <td><strong>Mexico Access Planning (CENAGAS MAC 2026C2)</strong></td>
+          <td>OPEN through Apr 27<br><span class="sig-ctx">VERIFIED</span></td>
+          <td>Window active</td>
+          <td>Administrative timing now matters commercially. Access planning is time-bound.</td>
+          <td>Cross-border marketers, Mexico supply planners</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="es-block">
+    <h2 class="sec-title">Se&ntilde;ales de Mercado Esta Semana</h2>
+    <table class="signals-table">
+      <thead>
+        <tr><th>Se&ntilde;al</th><th>Nivel Actual</th><th>Cambio Semanal</th><th>Por Qu&eacute; Importa</th><th>Qui&eacute;n Act&uacute;a</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Precio Cash Waha</strong></td>
+          <td>NEGATIVO<br><span class="sig-ctx">solo direccional &bull; sin precio publicado</span></td>
+          <td>Mayor deterioro al inicio de la semana</td>
+          <td>El acceso sigue siendo la restricci&oacute;n dominante. El gas de cuenca no puede asumirse como libremente disponible.</td>
+          <td>Productores del P&eacute;rmico, comercializadores transfronterizos, tenedores de transporte</td>
+        </tr>
+        <tr>
+          <td><strong>Henry Hub Spot</strong></td>
+          <td>$2.78/MMBtu<br><span class="sig-ctx">10 abr &bull; VERIFICADO</span></td>
+          <td>&darr; $0.08</td>
+          <td>El precio de referencia d&eacute;bil reduce el valor de posiciones alcistas en el mercado inmediato.</td>
+          <td>Compradores industriales, equipos de procura, comercializadores</td>
+        </tr>
+        <tr>
+          <td><strong>Almacenamiento EE.UU.</strong></td>
+          <td>1,911 Bcf<br><span class="sig-ctx">sem. hasta 3 abr &bull; VERIFICADO</span></td>
+          <td>+50 Bcf</td>
+          <td>Por encima del a&ntilde;o anterior y del promedio de 5 a&ntilde;os. El balance holgado debilita la narrativa de ajuste.</td>
+          <td>Compradores de gas, operadores de precio de referencia, equipos de procura industrial</td>
+        </tr>
+        <tr>
+          <td><strong>Exportaciones EE.UU. a M&eacute;xico</strong></td>
+          <td>6.1 Bcf/d prom<br><span class="sig-ctx">ene 2026 &bull; contexto estructural</span></td>
+          <td>No comparable</td>
+          <td>Confirma dependencia estructural. No describe condiciones actuales del corredor.</td>
+          <td>Estrategas transfronterizos, planificadores de mediano plazo</td>
+        </tr>
+        <tr>
+          <td><strong>Planificaci&oacute;n de Acceso M&eacute;xico (CENAGAS MAC 2026C2)</strong></td>
+          <td>ABIERTO hasta 27 abr<br><span class="sig-ctx">VERIFICADO</span></td>
+          <td>Ventana activa</td>
+          <td>El calendario administrativo ahora tiene peso comercial. La planificaci&oacute;n de acceso tiene fecha l&iacute;mite.</td>
+          <td>Comercializadores transfronterizos, planificadores de suministro para M&eacute;xico</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- PRICE BOARD -->
+<div class="section">
+  <div class="en-block">
+    <h2 class="sec-title">Price Board</h2>
+    <div class="pb-cards">
+      <div class="pb-card">
+        <div class="pbc-label">Waha Cash Signal</div>
+        <div class="pbc-val secondary">NEGATIVE (ESTIMATED)</div>
+        <div class="pbc-wow">Directional only &mdash; more distressed early week</div>
+        <div class="pbc-note">No publication-grade comparable print retrieved this run. Directional signal only per Reuters reporting.</div>
+        <div class="pbc-status"><span class="badge badge-lowconf">LOW CONFIDENCE</span></div>
+      </div>
+      <div class="pb-card">
+        <div class="pbc-label">Henry Hub Spot</div>
+        <div class="pbc-val">$2.78</div>
+        <div class="pbc-wow">/MMBtu &middot; Apr 10 &middot; &darr; $0.08 WoW</div>
+        <div class="pbc-note">Daily spot reference. Prior week: $2.86/MMBtu (Apr 3). Mid-week high: $3.04 (Apr 6).</div>
+        <div class="pbc-status"><span class="badge badge-verified">VERIFIED</span></div>
+      </div>
+      <div class="pb-card">
+        <div class="pbc-label">U.S. Working Gas in Storage</div>
+        <div class="pbc-val">1,911 <span style="font-size:1rem">Bcf</span></div>
+        <div class="pbc-wow">+50 Bcf WoW &middot; wk. ending Apr 3</div>
+        <div class="pbc-note">Above year-ago (1,822 Bcf) and 5yr avg (1,824 Bcf). Supports looser prompt balance.</div>
+        <div class="pbc-status"><span class="badge badge-verified">VERIFIED</span></div>
+      </div>
+      <div class="pb-card light">
+        <div class="pbc-label" style="color:#C8841A">U.S. Pipeline Exports to Mexico</div>
+        <div class="pbc-val" style="color:#2A2A2A;font-size:1.3rem">6.1 Bcf/d</div>
+        <div class="pbc-wow" style="color:#555">avg &middot; Jan 2026 &mdash; structural context only</div>
+        <div class="pbc-note" style="color:#777">Monthly average. Not a weekly flow signal. Does not confirm current corridor conditions or executable access.</div>
+        <div class="pbc-status"><span class="badge badge-verified">VERIFIED</span>&nbsp;<span class="badge badge-gray" style="background:#aaa">CONTEXT ONLY</span></div>
+      </div>
+    </div>
+    <table class="pb-table">
+      <thead>
+        <tr><th>Hub</th><th>Signal</th><th>Current Value</th><th>Prior Week</th><th>WoW Change</th><th>Data Type</th><th>Status</th><th>Commercial Note</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Waha</td>
+          <td>Cash Price</td>
+          <td>NEGATIVE</td>
+          <td>NEGATIVE</td>
+          <td>More distressed</td>
+          <td>Directional signal</td>
+          <td><span class="badge badge-lowconf">LOW CONF.</span></td>
+          <td>Basin gas trapped; access controls value.</td>
+        </tr>
+        <tr>
+          <td>Henry Hub LA</td>
+          <td>Spot</td>
+          <td>$2.78/MMBtu</td>
+          <td>$2.86/MMBtu</td>
+          <td>&darr; $0.08</td>
+          <td>Daily spot</td>
+          <td><span class="badge badge-verified">VERIFIED</span></td>
+          <td>Soft benchmark limits urgency for prompt procurement.</td>
+        </tr>
+        <tr>
+          <td>U.S. National</td>
+          <td>Working Gas Storage</td>
+          <td>1,911 Bcf</td>
+          <td>1,861 Bcf</td>
+          <td>+50 Bcf</td>
+          <td>Weekly EIA</td>
+          <td><span class="badge badge-verified">VERIFIED</span></td>
+          <td>Above seasonal norms; supports softer balance thesis.</td>
+        </tr>
+        <tr>
+          <td>U.S.&rarr;MX Border</td>
+          <td>Pipeline Exports</td>
+          <td>6.1 Bcf/d avg</td>
+          <td>6.25 Bcf/d avg</td>
+          <td>Not comparable</td>
+          <td>Monthly avg (Jan 2026)</td>
+          <td><span class="badge badge-verified">VERIFIED</span></td>
+          <td>Structural dependence intact; not a live corridor signal.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="es-block">
+    <h2 class="sec-title">Panel de Precios</h2>
+    <div class="pb-cards">
+      <div class="pb-card">
+        <div class="pbc-label">Se&ntilde;al Cash Waha</div>
+        <div class="pbc-val secondary">NEGATIVO (ESTIMADO)</div>
+        <div class="pbc-wow">Solo direccional &mdash; mayor deterioro a inicio de semana</div>
+        <div class="pbc-note">No se obtuvo precio comparable de fuente publicada en esta edici&oacute;n. Se&ntilde;al direccional basada en reportes de Reuters.</div>
+        <div class="pbc-status"><span class="badge badge-lowconf">BAJA CONFIANZA</span></div>
+      </div>
+      <div class="pb-card">
+        <div class="pbc-label">Henry Hub Spot</div>
+        <div class="pbc-val">$2.78</div>
+        <div class="pbc-wow">/MMBtu &middot; 10 abr &middot; &darr; $0.08 sem.</div>
+        <div class="pbc-note">Referencia spot diaria. Semana anterior: $2.86/MMBtu (3 abr). M&aacute;ximo intrasemanal: $3.04 (6 abr).</div>
+        <div class="pbc-status"><span class="badge badge-verified">VERIFICADO</span></div>
+      </div>
+      <div class="pb-card">
+        <div class="pbc-label">Almacenamiento EE.UU.</div>
+        <div class="pbc-val">1,911 <span style="font-size:1rem">Bcf</span></div>
+        <div class="pbc-wow">+50 Bcf sem. &middot; sem. hasta 3 abr</div>
+        <div class="pbc-note">Por encima del nivel del a&ntilde;o anterior (1,822 Bcf) y del promedio de 5 a&ntilde;os (1,824 Bcf). Respalda balance holgado.</div>
+        <div class="pbc-status"><span class="badge badge-verified">VERIFICADO</span></div>
+      </div>
+      <div class="pb-card light">
+        <div class="pbc-label" style="color:#C8841A">Exportaciones Gasoducto EE.UU.-M&eacute;xico</div>
+        <div class="pbc-val" style="color:#2A2A2A;font-size:1.3rem">6.1 Bcf/d</div>
+        <div class="pbc-wow" style="color:#555">prom &middot; ene 2026 &mdash; solo contexto estructural</div>
+        <div class="pbc-note" style="color:#777">Promedio mensual. No es una se&ntilde;al de flujo semanal. No confirma condiciones actuales del corredor.</div>
+        <div class="pbc-status"><span class="badge badge-verified">VERIFICADO</span>&nbsp;<span class="badge badge-gray" style="background:#aaa">SOLO CONTEXTO</span></div>
+      </div>
+    </div>
+    <table class="pb-table">
+      <thead>
+        <tr><th>Hub</th><th>Se&ntilde;al</th><th>Valor Actual</th><th>Semana Anterior</th><th>Cambio Semanal</th><th>Tipo de Dato</th><th>Estado</th><th>Nota Comercial</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Waha</td>
+          <td>Precio Cash</td>
+          <td>NEGATIVO</td>
+          <td>NEGATIVO</td>
+          <td>Mayor deterioro</td>
+          <td>Se&ntilde;al direccional</td>
+          <td><span class="badge badge-lowconf">BAJA CONF.</span></td>
+          <td>Gas atrapado en cuenca; el acceso controla el valor.</td>
+        </tr>
+        <tr>
+          <td>Henry Hub LA</td>
+          <td>Spot</td>
+          <td>$2.78/MMBtu</td>
+          <td>$2.86/MMBtu</td>
+          <td>&darr; $0.08</td>
+          <td>Spot diario</td>
+          <td><span class="badge badge-verified">VERIFICADO</span></td>
+          <td>Precio de referencia d&eacute;bil limita la urgencia de procura inmediata.</td>
+        </tr>
+        <tr>
+          <td>EE.UU. Nacional</td>
+          <td>Almacenamiento</td>
+          <td>1,911 Bcf</td>
+          <td>1,861 Bcf</td>
+          <td>+50 Bcf</td>
+          <td>Semanal EIA</td>
+          <td><span class="badge badge-verified">VERIFICADO</span></td>
+          <td>Por encima de la norma estacional; respalda la tesis de balance holgado.</td>
+        </tr>
+        <tr>
+          <td>Frontera EE.UU.&rarr;MX</td>
+          <td>Exportaciones gasoducto</td>
+          <td>6.1 Bcf/d prom</td>
+          <td>6.25 Bcf/d prom</td>
+          <td>No comparable</td>
+          <td>Prom. mensual (ene 2026)</td>
+          <td><span class="badge badge-verified">VERIFICADO</span></td>
+          <td>Dependencia estructural intacta; no es una se&ntilde;al de corredor en tiempo real.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- EDITORIAL PULSE -->
+<div class="section">
+  <div class="en-block">
+    <h2 class="sec-title">Editorial Pulse</h2>
+    <div class="pulse-grid">
+      <div class="pulse-card">
+        <div class="pulse-what">Permian Distress Remains Monetizable Only Through Controlled Path</div>
+        <div class="pulse-why">Verified data shows Waha stayed negative while no route-level relief entered service. The commercial spread between trapped basin gas and deliverable value is real &mdash; but it sits exclusively with access holders, not with the basin broadly.</div>
+        <div class="pulse-who">&rarr; Cross-border marketers with firm transport &middot; <span class="badge badge-verified" style="font-size:.58rem">VERIFIED</span></div>
+      </div>
+      <div class="pulse-card">
+        <div class="pulse-what">Prompt Procurement Bias Strengthened</div>
+        <div class="pulse-why">Softer Henry Hub and a 50 Bcf injection shifted the week's balance toward prompt looseness. The near-term benchmark pressure eased, reducing urgency for aggressive forward locking by buyers without immediate security of transport.</div>
+        <div class="pulse-who">&rarr; Industrial procurement teams &middot; <span class="badge badge-verified" style="font-size:.58rem">VERIFIED</span></div>
+      </div>
+      <div class="pulse-card">
+        <div class="pulse-what">April STEO Reinforced a Comfortable End to Withdrawal Season</div>
+        <div class="pulse-why">The EIA Short-Term Energy Outlook published April 7 supported a softer prompt balance backdrop. Editorial view based on available information: the STEO removed the last major near-term tightness argument for benchmark-driven procurement urgency.</div>
+        <div class="pulse-who">&rarr; Benchmark traders, procurement teams &middot; <span class="badge badge-verified" style="font-size:.58rem">VERIFIED</span></div>
+      </div>
+      <div class="pulse-card">
+        <div class="pulse-what">Mexico Access Planning Moved Closer to Execution Screening</div>
+        <div class="pulse-why">The MAC 2026C2 process is live and time-bound. Commercial interpretation implies participants must now separate administrative access positioning from current-week monetization assumptions. Approved capacity from this window will shape later optionality, not present-week deliverability.</div>
+        <div class="pulse-who">&rarr; Cross-border market entrants, existing marketers &middot; <span class="badge badge-verified" style="font-size:.58rem">VERIFIED</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="es-block">
+    <h2 class="sec-title">An&aacute;lisis Comercial de la Semana</h2>
+    <div class="pulse-grid">
+      <div class="pulse-card">
+        <div class="pulse-what">El Deterioro del P&eacute;rmico Solo Se Monetiza a Trav&eacute;s de Rutas Controladas</div>
+        <div class="pulse-why">Los datos verificados muestran que el Waha se mantuvo negativo mientras ning&uacute;n alivio verificado de ruta entr&oacute; en servicio. La diferencia entre el gas atrapado en cuenca y el valor entregable es real, pero pertenece exclusivamente a quienes controlan el acceso f&iacute;sico.</div>
+        <div class="pulse-who">&rarr; Comercializadores transfronterizos con transporte firme &middot; <span class="badge badge-verified" style="font-size:.58rem">VERIFICADO</span></div>
+      </div>
+      <div class="pulse-card">
+        <div class="pulse-what">El Sesgo de Procura Inmediata Se Fortaleci&oacute;</div>
+        <div class="pulse-why">La ca&iacute;da del Henry Hub y la inyecci&oacute;n de 50 Bcf desplazaron el balance semanal hacia mayor holgura inmediata. La presi&oacute;n a la baja en el precio de referencia de corto plazo redujo la urgencia de asegurar posiciones de compra forward para compradores sin transporte garantizado.</div>
+        <div class="pulse-who">&rarr; Equipos de procura industrial &middot; <span class="badge badge-verified" style="font-size:.58rem">VERIFICADO</span></div>
+      </div>
+      <div class="pulse-card">
+        <div class="pulse-what">El STEO de Abril Reforz&oacute; un Cierre C&oacute;modo de la Temporada de Retiro</div>
+        <div class="pulse-why">El Pron&oacute;stico de Energ&iacute;a a Corto Plazo de la EIA del 7 de abril respald&oacute; un panorama m&aacute;s holgado. Valoraci&oacute;n editorial basada en la informaci&oacute;n disponible: el STEO elimin&oacute; el principal argumento de ajuste a corto plazo para justificar urgencia de procura ligada al precio de referencia.</div>
+        <div class="pulse-who">&rarr; Operadores de precio de referencia, equipos de procura &middot; <span class="badge badge-verified" style="font-size:.58rem">VERIFICADO</span></div>
+      </div>
+      <div class="pulse-card">
+        <div class="pulse-what">La Planificaci&oacute;n de Acceso a M&eacute;xico Avanz&oacute; Hacia la Etapa de Evaluaci&oacute;n</div>
+        <div class="pulse-why">El proceso MAC 2026C2 est&aacute; activo y tiene fecha l&iacute;mite. Los participantes deben separar el posicionamiento administrativo de acceso de los supuestos de monetizaci&oacute;n en la semana actual. La capacidad asignada de esta ventana definir&aacute; opcionalidad futura, no capacidad entregable inmediata.</div>
+        <div class="pulse-who">&rarr; Nuevos entrantes transfronterizos, comercializadores existentes &middot; <span class="badge badge-verified" style="font-size:.58rem">VERIFICADO</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- U.S. MARKET SPOTLIGHT -->
+<div class="section">
+  <div class="en-block">
+    <h2 class="sec-title">U.S. Market Spotlight</h2>
+    <div class="spotlight-item">
+      <div class="sl-headline">Prompt U.S. Balance Looks Softer, Not Tighter</div>
+      <div class="sl-body">Storage reached 1,911 Bcf for the week ending April 3, a 50 Bcf injection that placed inventories above both year-ago (1,822 Bcf) and five-year average (1,824 Bcf) levels. Henry Hub Louisiana spot was $2.78/MMBtu on April 10, below the prior Friday. The April STEO, published April 7, reinforced a relatively comfortable end to the withdrawal season.</div>
+      <div class="sl-meaning"><label>Commercial Meaning</label>The national benchmark backdrop does not justify urgency buying by itself. Participants should separate national prompt softness from local transport bottlenecks in the Permian Basin.</div>
+      <div class="sl-footer"><span>Who Should Care:</span> Industrial buyers, benchmark traders, procurement teams &nbsp;|&nbsp; <span>Sources:</span> EIA Weekly Natural Gas Storage Report, EIA Daily Prices, EIA STEO (Apr 7, 2026)</div>
+    </div>
+    <div class="spotlight-item">
+      <div class="sl-headline">Permian Distress Remains an Access Story, Not a Supply Story</div>
+      <div class="sl-body">Waha stayed negative this week, with further distress visible early in the reporting window. Kinder Morgan still expects the Gulf Coast Express expansion to enter service in mid-2026, meaning structural takeaway relief is later &mdash; not immediate. No current-week route-level congestion relief was verified.</div>
+      <div class="sl-meaning"><label>Commercial Meaning</label>The market still rewards controlled path access more than outright directional gas views in the basin. Participants holding firm takeaway from the Permian hold the primary commercial advantage this week.</div>
+      <div class="sl-footer"><span>Who Should Care:</span> Permian producers, basis desks, cross-border marketers &nbsp;|&nbsp; <span>Sources:</span> Reuters market reporting (Apr 2026 current week, Jan 2026 project timing context)</div>
+    </div>
+  </div>
+  <div class="es-block">
+    <h2 class="sec-title">Panorama del Mercado EE.UU.</h2>
+    <div class="spotlight-item">
+      <div class="sl-headline">El Balance Inmediato en EE.UU. Luce M&aacute;s Holgado, No M&aacute;s Ajustado</div>
+      <div class="sl-body">El almacenamiento alcanz&oacute; 1,911 Bcf para la semana que termin&oacute; el 3 de abril, con una inyecci&oacute;n de 50 Bcf que coloc&oacute; los inventarios por encima del nivel del a&ntilde;o anterior (1,822 Bcf) y del promedio de cinco a&ntilde;os (1,824 Bcf). El Henry Hub spot fue de $2.78/MMBtu el 10 de abril, por debajo del viernes anterior. El STEO de abril, publicado el 7 de abril, reforz&oacute; un cierre relativamente c&oacute;modo de la temporada de retiro de gas.</div>
+      <div class="sl-meaning"><label>Significado Comercial</label>El panorama nacional del precio de referencia no justifica por s&iacute; solo compras de urgencia. Los participantes deben separar la holgura nacional del mercado inmediato de los cuellos de botella de transporte locales en la cuenca del P&eacute;rmico.</div>
+      <div class="sl-footer"><span>Qui&eacute;n Debe Atender:</span> Compradores industriales, operadores de precio de referencia, equipos de procura &nbsp;|&nbsp; <span>Fuentes:</span> EIA Weekly Natural Gas Storage Report, EIA Daily Prices, EIA STEO (7 abr 2026)</div>
+    </div>
+    <div class="spotlight-item">
+      <div class="sl-headline">El Deterioro del P&eacute;rmico Sigue Siendo una Historia de Acceso, No de Suministro</div>
+      <div class="sl-body">El Waha se mantuvo negativo esta semana, con mayor deterioro visible al inicio del periodo de reporte. Kinder Morgan sigue esperando que la expansi&oacute;n del Gulf Coast Express entre en servicio a mediados de 2026, lo que significa que el alivio estructural de capacidad de evacuaci&oacute;n es posterior, no inmediato. No se verific&oacute; ning&uacute;n alivio de congesti&oacute;n a nivel de ruta en la semana actual.</div>
+      <div class="sl-meaning"><label>Significado Comercial</label>El mercado sigue recompensando el control f&iacute;sico de rutas m&aacute;s que las posiciones direccionales de precio en la cuenca. Los participantes con transporte firme desde el P&eacute;rmico tienen la principal ventaja comercial esta semana.</div>
+      <div class="sl-footer"><span>Qui&eacute;n Debe Atender:</span> Productores del P&eacute;rmico, mesas de base, comercializadores transfronterizos &nbsp;|&nbsp; <span>Fuentes:</span> Reuters market reporting (sem. actual abr 2026, contexto de proyecto ene 2026)</div>
+    </div>
+  </div>
+</div>
+
+<!-- MEXICO MARKET SPOTLIGHT -->
+<div class="section">
+  <div class="en-block">
+    <h2 class="sec-title">Mexico Market Spotlight</h2>
+    <div class="spotlight-item">
+      <div class="sl-headline">Mexico Access Planning Is Active, But Current-Week Monetization Remains Conditional</div>
+      <div class="sl-body">The CENAGAS MAC 2026C2 solicitation process remains open through April 27, 2026 per official CENAGAS and CNE publications. Participants still have a live window to file or finalize access positioning for SISTRANGAS-related capacity requests. No current-week value should be assumed from the process outcome before allocation and executable rights are officially disclosed.</div>
+      <div class="sl-meaning"><label>Cross-Border Relevance</label>Relevant for marketers and supply planners seeking future SISTRANGAS optionality. Administrative timing can shape later commercial access even if it does not create current-week deliverability.</div>
+      <div class="sl-footer"><span>Who Should Care:</span> Cross-border marketers, large buyers, commercial teams building Mexico path options &nbsp;|&nbsp; <span>Source:</span> CENAGAS Bolet&iacute;n Electr&oacute;nico, Comisi&oacute;n Nacional de Energ&iacute;a (Mar 27, 2026)</div>
+    </div>
+    <div class="spotlight-item">
+      <div class="sl-headline">Mexico Remains Structurally Dependent on U.S. Gas &mdash; But Monthly Data Is Not a Weekly Flow Signal</div>
+      <div class="sl-body">U.S. pipeline exports to Mexico totaled approximately 189 Bcf in January 2026, averaging 6.10 Bcf per day. This figure confirms the structural import dependency remains intact but cannot describe current-week corridor tightness, path availability, or executable border capture.</div>
+      <div class="sl-meaning"><label>Cross-Border Relevance</label>Useful for medium-term commercial dependence tracking. Should not be cited as evidence of current-week corridor conditions or available supply routes.</div>
+      <div class="sl-footer"><span>Who Should Care:</span> Mexico power-linked buyers, marketers, long-term planners &nbsp;|&nbsp; <span>Source:</span> EIA U.S. Natural Gas Pipeline Exports to Mexico (Mar 31, 2026)</div>
+    </div>
+  </div>
+  <div class="es-block">
+    <h2 class="sec-title">Panorama del Mercado M&eacute;xico</h2>
+    <div class="spotlight-item">
+      <div class="sl-headline">La Planificaci&oacute;n de Acceso a M&eacute;xico Est&aacute; Activa, Pero la Monetizaci&oacute;n Esta Semana Sigue Siendo Condicional</div>
+      <div class="sl-body">El proceso de solicitud MAC 2026C2 de CENAGAS permanece abierto hasta el 27 de abril de 2026, seg&uacute;n publicaciones oficiales de CENAGAS y la CNE. Los participantes a&uacute;n tienen una ventana activa para presentar o finalizar su posicionamiento de acceso para solicitudes de capacidad relacionadas con el SISTRANGAS. No debe asumirse ning&uacute;n valor ejecutable en la semana actual antes de que se divulguen oficialmente la asignaci&oacute;n y los derechos ejecutables.</div>
+      <div class="sl-meaning"><label>Relevancia Transfronteriza</label>Relevante para comercializadores y planificadores de suministro que buscan opcionalidad futura en el SISTRANGAS. El calendario administrativo puede dar forma al acceso comercial posterior, incluso si no genera capacidad entregable en la semana actual.</div>
+      <div class="sl-footer"><span>Qui&eacute;n Debe Atender:</span> Comercializadores transfronterizos, grandes compradores, equipos comerciales que construyen opciones de ruta para M&eacute;xico &nbsp;|&nbsp; <span>Fuente:</span> Bolet&iacute;n Electr&oacute;nico CENAGAS, Comisi&oacute;n Nacional de Energ&iacute;a (27 mar 2026)</div>
+    </div>
+    <div class="spotlight-item">
+      <div class="sl-headline">M&eacute;xico Sigue Dependiendo Estructuralmente del Gas de EE.UU., Pero los Datos Mensuales No Son una Se&ntilde;al de Flujo Semanal</div>
+      <div class="sl-body">Las exportaciones de gas por gasoducto de EE.UU. a M&eacute;xico totalizaron aproximadamente 189 Bcf en enero de 2026, con un promedio de 6.10 Bcf/d. Esta cifra confirma que la dependencia estructural de importaci&oacute;n sigue intacta, pero no describe las condiciones actuales del corredor, la disponibilidad de rutas ni la captura ejecutable en frontera.</div>
+      <div class="sl-meaning"><label>Relevancia Transfronteriza</label>&Uacute;til para el seguimiento de la dependencia comercial de mediano plazo. No debe citarse como evidencia de condiciones actuales del corredor o rutas de suministro disponibles.</div>
+      <div class="sl-footer"><span>Qui&eacute;n Debe Atender:</span> Compradores mexicanos ligados a generaci&oacute;n el&eacute;ctrica, comercializadores, planificadores de largo plazo &nbsp;|&nbsp; <span>Fuente:</span> EIA U.S. Natural Gas Pipeline Exports to Mexico (31 mar 2026)</div>
+    </div>
+  </div>
+</div>
+
+<!-- DELIVERED GAS LOGIC FOR MEXICO -->
+<div class="section">
+  <div class="en-block">
+    <h2 class="sec-title">Delivered Gas Logic for Mexico</h2>
+    <div class="deliv-cards">
+      <div class="deliv-card">
+        <div class="deliv-origin">Permian Distressed Gas</div>
+        <div class="deliv-logic">Upstream weakness can improve delivered economics only where transport access, border path plausibility, and marketer passthrough are already in place. Waha negativity alone does not create delivered benefit.</div>
+        <div class="deliv-who"><strong>Who Can Actually Capture It:</strong> Marketers and buyers with confirmed path rights and commercial formulas linked to upstream indices.</div>
+        <div class="deliv-limit"><strong>Main Limitation:</strong> Route access and border rights were not verified as newly available this run. Delivered price benefit is conditional, not automatic.<br><span class="conf-badge conf-low">DELIVERED PRICE CONFIDENCE: LOW</span></div>
+      </div>
+      <div class="deliv-card">
+        <div class="deliv-origin">Henry Hub-Linked Gulf / South Louisiana Supply</div>
+        <div class="deliv-logic">Softer benchmark gas can support steadier delivered offers where contracts are benchmark-linked and route access is already functioning. More plausible than Permian distress passthrough, but still participant-specific.</div>
+        <div class="deliv-who"><strong>Who Can Actually Capture It:</strong> Industrial buyers supplied through active marketer structures with stable path availability.</div>
+        <div class="deliv-limit"><strong>Main Limitation:</strong> Delivered pricing formulas and path availability differ by counterparty and were not publication-grade retrievable this run.<br><span class="conf-badge conf-med">DELIVERED PRICE CONFIDENCE: MEDIUM</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="es-block">
+    <h2 class="sec-title">L&oacute;gica de suministro de gas para M&eacute;xico</h2>
+    <div class="deliv-cards">
+      <div class="deliv-card">
+        <div class="deliv-origin">Gas del P&eacute;rmico con Precio Deteriorado</div>
+        <div class="deliv-logic">La debilidad del precio aguas arriba puede mejorar la econom&iacute;a de entrega solo donde el acceso al transporte, la viabilidad de la ruta fronteriza y la estructura de traslado del comercializador ya est&eacute;n en operaci&oacute;n. La negatividad del Waha por s&iacute; sola no crea beneficio en el precio entregado.</div>
+        <div class="deliv-who"><strong>Qui&eacute;n Puede Capturarlo Realmente:</strong> Comercializadores y compradores con derechos de ruta confirmados y f&oacute;rmulas comerciales ligadas a &iacute;ndices de producci&oacute;n.</div>
+        <div class="deliv-limit"><strong>Limitaci&oacute;n Principal:</strong> El acceso a rutas y los derechos fronterizos no se verificaron como nuevamente disponibles en esta edici&oacute;n. El beneficio en el precio entregado es condicional, no autom&aacute;tico.<br><span class="conf-badge conf-low">CONFIANZA EN PRECIO ENTREGADO: BAJA</span></div>
+      </div>
+      <div class="deliv-card">
+        <div class="deliv-origin">Suministro Ligado al Henry Hub (Golfo / Sur de Luisiana)</div>
+        <div class="deliv-logic">El gas con precio de referencia m&aacute;s bajo puede sostener ofertas de entrega m&aacute;s estables donde los contratos est&eacute;n ligados al precio de referencia y la disponibilidad de ruta ya est&eacute; operando. M&aacute;s plausible que el traslado del deterioro del P&eacute;rmico, pero a&uacute;n depende de cada participante.</div>
+        <div class="deliv-who"><strong>Qui&eacute;n Puede Capturarlo Realmente:</strong> Compradores industriales abastecidos a trav&eacute;s de estructuras de comercializador activas con disponibilidad estable de ruta.</div>
+        <div class="deliv-limit"><strong>Limitaci&oacute;n Principal:</strong> Las f&oacute;rmulas de precio entregado y la disponibilidad de ruta var&iacute;an por contraparte y no fueron recuperables de fuente publicada en esta edici&oacute;n.<br><span class="conf-badge conf-med">CONFIANZA EN PRECIO ENTREGADO: MEDIA</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REGULATORY AND INFRASTRUCTURE RADAR -->
+<div class="section">
+  <div class="en-block">
+    <h2 class="sec-title">Regulatory &amp; Infrastructure Radar</h2>
+    <table class="infra-table">
+      <thead>
+        <tr><th>Development</th><th>Status</th><th>Operational Impact</th><th>Commercial Implication</th><th>Action / Mitigation</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>CENAGAS MAC 2026C2 — Open Through April 27, 2026</strong></td>
+          <td><span class="badge badge-verified">VERIFIED</span></td>
+          <td>Participants still have a live window to file or finalize access positioning for SISTRANGAS-related capacity requests.</td>
+          <td>Access planning is time-bound and cannot be deferred without losing option value. This is an administrative deadline, not an operational go-live.</td>
+          <td>Validate route assumptions, service requests, and counterparties before the deadline. Separate filing-window significance from current-week monetization.</td>
+        </tr>
+        <tr>
+          <td><strong>Gulf Coast Express Expansion — Mid-2026 Expected In-Service</strong></td>
+          <td><span class="badge badge-verified">VERIFIED</span></td>
+          <td>Additional takeaway capacity is not yet in service. Current Permian price distress can persist until a verified in-service event occurs.</td>
+          <td>Do not price current-week basis capture as if new structural relief has already arrived. Basis compression will not occur mechanically until GCX expansion is confirmed operational.</td>
+          <td>Treat near-term Permian weakness as potentially persistent. Plan basis exposure accordingly and avoid assuming relief ahead of a verified in-service notice.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="es-block">
+    <h2 class="sec-title">Radar Regulatorio e Infraestructura</h2>
+    <table class="infra-table">
+      <thead>
+        <tr><th>Desarrollo</th><th>Estado</th><th>Impacto Operativo</th><th>Implicaci&oacute;n Comercial</th><th>Acci&oacute;n / Mitigaci&oacute;n</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>CENAGAS MAC 2026C2 &mdash; Abierto hasta el 27 de abril de 2026</strong></td>
+          <td><span class="badge badge-verified">VERIFICADO</span></td>
+          <td>Los participantes a&uacute;n tienen una ventana activa para presentar o finalizar su posicionamiento de acceso en solicitudes de capacidad del SISTRANGAS.</td>
+          <td>La planificaci&oacute;n de acceso tiene fecha l&iacute;mite y no puede diferirse sin perder valor de opci&oacute;n. Esta es una fecha l&iacute;mite administrativa, no un inicio de operaciones.</td>
+          <td>Validar supuestos de ruta, solicitudes de servicio y contrapartes antes de la fecha l&iacute;mite. Separar la importancia de la ventana de solicitud de los supuestos de monetizaci&oacute;n de la semana actual.</td>
+        </tr>
+        <tr>
+          <td><strong>Expansi&oacute;n del Gulf Coast Express &mdash; Entrada en servicio esperada para mediados de 2026</strong></td>
+          <td><span class="badge badge-verified">VERIFICADO</span></td>
+          <td>La capacidad adicional de evacuaci&oacute;n a&uacute;n no est&aacute; en servicio. El deterioro del precio del P&eacute;rmico puede persistir hasta que ocurra un evento verificado de inicio de operaciones.</td>
+          <td>No valorar la captura de base de la semana actual como si el nuevo alivio estructural ya hubiera llegado. La compresi&oacute;n de base no ocurrir&aacute; hasta que la expansi&oacute;n del GCX sea confirmada como operativa.</td>
+          <td>Tratar la debilidad de corto plazo en el P&eacute;rmico como potencialmente persistente. Planificar la exposici&oacute;n de base en consecuencia y evitar asumir alivio antes de un aviso verificado de inicio de operaciones.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- MARKET CHARTS -->
+<div class="section">
+  <div class="en-block">
+    <h2 class="sec-title">Market Charts</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+      <div class="chart-wrap">
+        <div class="chart-title">U.S. Working Gas in Storage — Week Ending Apr 3, 2026</div>
+        <div class="chart-sub">Bcf &middot; Compared to year-ago and 5-year average &middot; EIA VERIFIED</div>
+        <svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;margin-top:8px">
+          <rect x="0" y="0" width="360" height="200" fill="#fff"/>
+          <!-- Y axis labels -->
+          <text x="8" y="30" font-family="Courier New" font-size="9" fill="#888">2000</text>
+          <text x="8" y="70" font-family="Courier New" font-size="9" fill="#888">1900</text>
+          <text x="8" y="110" font-family="Courier New" font-size="9" fill="#888">1800</text>
+          <text x="8" y="150" font-family="Courier New" font-size="9" fill="#888">1700</text>
+          <!-- Grid lines -->
+          <line x1="40" y1="25" x2="350" y2="25" stroke="#f0e8d0" stroke-width="1"/>
+          <line x1="40" y1="65" x2="350" y2="65" stroke="#f0e8d0" stroke-width="1"/>
+          <line x1="40" y1="105" x2="350" y2="105" stroke="#f0e8d0" stroke-width="1"/>
+          <line x1="40" y1="145" x2="350" y2="145" stroke="#f0e8d0" stroke-width="1"/>
+          <!-- Bars: Current 1911, Prior 1861, Yr-ago 1822, 5yr 1824 -->
+          <!-- Scale: 1600=165, 2000=25, range=140px for 400Bcf. 1px=0.35Bcf -->
+          <!-- Current 1911: height = (1911-1600)*0.35 = 108.85, top = 165-108.85 = 56.15 -->
+          <rect x="55" y="56" width="50" height="109" fill="#C8841A"/>
+          <text x="80" y="52" text-anchor="middle" font-family="Courier New" font-size="9" fill="#C8841A" font-weight="bold">1,911</text>
+          <!-- Prior 1861: height = (1861-1600)*0.35 = 91.35, top = 73.65 -->
+          <rect x="130" y="74" width="50" height="91" fill="#888"/>
+          <text x="155" y="70" text-anchor="middle" font-family="Courier New" font-size="9" fill="#888">1,861</text>
+          <!-- Yr-ago 1822: height = (1822-1600)*0.35 = 77.7, top = 87.3 -->
+          <rect x="205" y="87" width="50" height="78" fill="#aaa"/>
+          <text x="230" y="83" text-anchor="middle" font-family="Courier New" font-size="9" fill="#666">1,822</text>
+          <!-- 5yr avg 1824: height = 78.4, top = 86.6 -->
+          <rect x="280" y="87" width="50" height="78" fill="#ccc"/>
+          <text x="305" y="83" text-anchor="middle" font-family="Courier New" font-size="9" fill="#666">1,824</text>
+          <!-- X Labels -->
+          <text x="80" y="180" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#444">Current</text>
+          <text x="80" y="190" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#444">Week</text>
+          <text x="155" y="180" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#666">Prior</text>
+          <text x="155" y="190" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#666">Week</text>
+          <text x="230" y="180" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#666">Year</text>
+          <text x="230" y="190" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#666">Ago</text>
+          <text x="305" y="180" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#666">5yr</text>
+          <text x="305" y="190" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#666">Avg</text>
+          <!-- Above label -->
+          <text x="200" y="16" text-anchor="middle" font-family="Arial" font-size="9" fill="#1a7a2e" font-weight="bold">&#9650; Current week above year-ago and 5yr average</text>
+        </svg>
+      </div>
+      <div class="chart-wrap">
+        <div class="chart-title">Henry Hub Spot — Daily Reference, Apr 3–10, 2026</div>
+        <div class="chart-sub">$/MMBtu &middot; EIA VERIFIED &middot; Daily spot, not execution quote</div>
+        <svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;margin-top:8px">
+          <rect x="0" y="0" width="360" height="200" fill="#fff"/>
+          <!-- Y axis -->
+          <text x="8" y="40" font-family="Courier New" font-size="9" fill="#888">3.20</text>
+          <text x="8" y="75" font-family="Courier New" font-size="9" fill="#888">3.00</text>
+          <text x="8" y="110" font-family="Courier New" font-size="9" fill="#888">2.80</text>
+          <text x="8" y="145" font-family="Courier New" font-size="9" fill="#888">2.60</text>
+          <!-- Grid -->
+          <line x1="40" y1="35" x2="340" y2="35" stroke="#f0e8d0" stroke-width="1"/>
+          <line x1="40" y1="70" x2="340" y2="70" stroke="#f0e8d0" stroke-width="1"/>
+          <line x1="40" y1="105" x2="340" y2="105" stroke="#f0e8d0" stroke-width="1"/>
+          <line x1="40" y1="140" x2="340" y2="140" stroke="#f0e8d0" stroke-width="1"/>
+          <!-- Points: scale 2.40=155, 3.30=35, range 120px for 0.90. 1px=0.0075/px -->
+          <!-- Apr 3: 2.86 -> y = 155-(0.46/0.90)*120 = 155-61.3 = 93.7 -->
+          <!-- Apr 6: 3.04 -> y = 155-(0.64/0.90)*120 = 155-85.3 = 69.7 -->
+          <!-- Apr 10: 2.78 -> y = 155-(0.38/0.90)*120 = 155-50.7 = 104.3 -->
+          <polyline points="80,94 190,70 310,104" fill="none" stroke="#C8841A" stroke-width="2.5" stroke-linejoin="round"/>
+          <circle cx="80" cy="94" r="5" fill="#C8841A"/>
+          <circle cx="190" cy="70" r="5" fill="#C8841A"/>
+          <circle cx="310" cy="104" r="6" fill="#2A2A2A" stroke="#C8841A" stroke-width="2"/>
+          <!-- Labels -->
+          <text x="80" y="88" text-anchor="middle" font-family="Courier New" font-size="9" fill="#C8841A">$2.86</text>
+          <text x="190" y="64" text-anchor="middle" font-family="Courier New" font-size="9" fill="#888">$3.04</text>
+          <text x="310" y="98" text-anchor="middle" font-family="Courier New" font-size="9" fill="#2A2A2A" font-weight="bold">$2.78</text>
+          <!-- X Labels -->
+          <text x="80" y="175" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#666">Apr 3</text>
+          <text x="190" y="175" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#666">Apr 6</text>
+          <text x="310" y="175" text-anchor="middle" font-family="Arial" font-size="9" fill="#2A2A2A" font-weight="bold">Apr 10</text>
+          <text x="200" y="16" text-anchor="middle" font-family="Arial" font-size="9" fill="#888">Benchmark ended week below prior Friday despite mid-week spike</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="es-block">
+    <h2 class="sec-title">Gr&aacute;ficas de Mercado</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+      <div class="chart-wrap">
+        <div class="chart-title">Almacenamiento de Gas EE.UU. &mdash; Sem. hasta 3 abr 2026</div>
+        <div class="chart-sub">Bcf &middot; Comparado con a&ntilde;o anterior y promedio 5 a&ntilde;os &middot; EIA VERIFICADO</div>
+        <svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;margin-top:8px">
+          <rect x="0" y="0" width="360" height="200" fill="#fff"/>
+          <text x="8" y="30" font-family="Courier New" font-size="9" fill="#888">2000</text>
+          <text x="8" y="70" font-family="Courier New" font-size="9" fill="#888">1900</text>
+          <text x="8" y="110" font-family="Courier New" font-size="9" fill="#888">1800</text>
+          <text x="8" y="150" font-family="Courier New" font-size="9" fill="#888">1700</text>
+          <line x1="40" y1="25" x2="350" y2="25" stroke="#f0e8d0" stroke-width="1"/>
+          <line x1="40" y1="65" x2="350" y2="65" stroke="#f0e8d0" stroke-width="1"/>
+          <line x1="40" y1="105" x2="350" y2="105" stroke="#f0e8d0" stroke-width="1"/>
+          <line x1="40" y1="145" x2="350" y2="145" stroke="#f0e8d0" stroke-width="1"/>
+          <rect x="55" y="56" width="50" height="109" fill="#C8841A"/>
+          <text x="80" y="52" text-anchor="middle" font-family="Courier New" font-size="9" fill="#C8841A" font-weight="bold">1,911</text>
+          <rect x="130" y="74" width="50" height="91" fill="#888"/>
+          <text x="155" y="70" text-anchor="middle" font-family="Courier New" font-size="9" fill="#888">1,861</text>
+          <rect x="205" y="87" width="50" height="78" fill="#aaa"/>
+          <text x="230" y="83" text-anchor="middle" font-family="Courier New" font-size="9" fill="#666">1,822</text>
+          <rect x="280" y="87" width="50" height="78" fill="#ccc"/>
+          <text x="305" y="83" text-anchor="middle" font-family="Courier New" font-size="9" fill="#666">1,824</text>
+          <text x="80" y="180" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#444">Actual</text>
+          <text x="155" y="180" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#666">Sem. ant.</text>
+          <text x="230" y="180" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#666">A&ntilde;o ant.</text>
+          <text x="305" y="180" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#666">Prom 5a</text>
+          <text x="200" y="16" text-anchor="middle" font-family="Arial" font-size="9" fill="#1a7a2e" font-weight="bold">&#9650; Semana actual por encima del a&ntilde;o anterior y promedio 5 a&ntilde;os</text>
+        </svg>
+      </div>
+      <div class="chart-wrap">
+        <div class="chart-title">Henry Hub Spot &mdash; Referencia Diaria, 3&ndash;10 abr 2026</div>
+        <div class="chart-sub">$/MMBtu &middot; EIA VERIFICADO &middot; Spot diario, no cotizaci&oacute;n de ejecuci&oacute;n</div>
+        <svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;margin-top:8px">
+          <rect x="0" y="0" width="360" height="200" fill="#fff"/>
+          <text x="8" y="40" font-family="Courier New" font-size="9" fill="#888">3.20</text>
+          <text x="8" y="75" font-family="Courier New" font-size="9" fill="#888">3.00</text>
+          <text x="8" y="110" font-family="Courier New" font-size="9" fill="#888">2.80</text>
+          <text x="8" y="145" font-family="Courier New" font-size="9" fill="#888">2.60</text>
+          <line x1="40" y1="35" x2="340" y2="35" stroke="#f0e8d0" stroke-width="1"/>
+          <line x1="40" y1="70" x2="340" y2="70" stroke="#f0e8d0" stroke-width="1"/>
+          <line x1="40" y1="105" x2="340" y2="105" stroke="#f0e8d0" stroke-width="1"/>
+          <line x1="40" y1="140" x2="340" y2="140" stroke="#f0e8d0" stroke-width="1"/>
+          <polyline points="80,94 190,70 310,104" fill="none" stroke="#C8841A" stroke-width="2.5" stroke-linejoin="round"/>
+          <circle cx="80" cy="94" r="5" fill="#C8841A"/>
+          <circle cx="190" cy="70" r="5" fill="#C8841A"/>
+          <circle cx="310" cy="104" r="6" fill="#2A2A2A" stroke="#C8841A" stroke-width="2"/>
+          <text x="80" y="88" text-anchor="middle" font-family="Courier New" font-size="9" fill="#C8841A">$2.86</text>
+          <text x="190" y="64" text-anchor="middle" font-family="Courier New" font-size="9" fill="#888">$3.04</text>
+          <text x="310" y="98" text-anchor="middle" font-family="Courier New" font-size="9" fill="#2A2A2A" font-weight="bold">$2.78</text>
+          <text x="80" y="175" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#666">3 abr</text>
+          <text x="190" y="175" text-anchor="middle" font-family="Arial" font-size="8.5" fill="#666">6 abr</text>
+          <text x="310" y="175" text-anchor="middle" font-family="Arial" font-size="9" fill="#2A2A2A" font-weight="bold">10 abr</text>
+          <text x="200" y="16" text-anchor="middle" font-family="Arial" font-size="9" fill="#888">El precio de referencia cerr&oacute; la semana por debajo del viernes anterior pese al alza intermedia</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHERE MONEY IS MADE -->
+<div class="section">
+<div class="en-block">
+<div id="wmim">
+  <h2>Where Money Is Made</h2>
+  <div class="opp-grid">
+
+    <div class="opp-card">
+      <div class="snap-badge-row"><span class="badge badge-verified">VERIFIED</span></div>
+      <div class="opp-title">Permian Basis Capture — Secured Outbound Route Required</div>
+      <div class="opp-field"><label>Market Structure</label><p>Negative Waha vs. softer-but-positive Henry Hub and downstream markers. The spread is real but not universally accessible.</p></div>
+      <div class="opp-field"><label>Who Is Best Positioned</label><p>Cross-border marketers with firm transport and border optionality already in place.</p></div>
+      <div class="rma-block high-barrier">
+        <div class="rma-label high-barrier">Required Market Access</div>
+        <div class="rma-text">Firm Permian takeaway rights plus verified border path and downstream delivery rights. Participants without both components cannot enter this trade.</div>
+      </div>
+      <div class="gate-row">
+        <div class="gate-item"><label>Gating Condition</label><p>Basin weakness must persist and the participant must hold usable path rights during the timing window.</p></div>
+        <div class="gate-item"><label>Timing Window</label><p>Current prompt week, subject to daily path and market conditions.</p></div>
+      </div>
+      <div class="opp-fail">Primary Failure Risk: No path rights, route friction, nomination failure, or a sudden lift in basin prices eliminates the opportunity.</div>
+    </div>
+
+    <div class="opp-card">
+      <div class="snap-badge-row"><span class="badge badge-verified">VERIFIED</span></div>
+      <div class="opp-title">Prompt Henry Hub Procurement — Benchmark Softness Window</div>
+      <div class="opp-field"><label>Market Structure</label><p>Comfortable storage and a week-over-week decline in Henry Hub spot create a near-term buyer's environment for benchmark-linked contracts.</p></div>
+      <div class="opp-field"><label>Who Is Best Positioned</label><p>Large industrial buyers with benchmark-linked supply contracts where counterparties pass through spot softness.</p></div>
+      <div class="rma-block mod-barrier">
+        <div class="rma-label mod-barrier">Required Market Access</div>
+        <div class="rma-text">Existing contracted delivery path through an active marketer or utility-linked supply chain. Contract must price off Henry Hub or a benchmark derivative.</div>
+      </div>
+      <div class="gate-row">
+        <div class="gate-item"><label>Gating Condition</label><p>Counterparty must actually price off benchmark and maintain reliable path availability during the purchase window.</p></div>
+        <div class="gate-item"><label>Timing Window</label><p>Near-term purchases into the next reporting cycle.</p></div>
+      </div>
+      <div class="opp-fail">Primary Failure Risk: Supplier basis adders or path frictions absorb the benchmark improvement before it reaches the buyer.</div>
+    </div>
+
+    <div class="opp-card">
+      <div class="snap-badge-row"><span class="badge badge-verified">VERIFIED</span></div>
+      <div class="opp-title">Transport Optionality Monetization — Path Value Over Direction</div>
+      <div class="opp-field"><label>Market Structure</label><p>The strongest weekly distortion is physical access scarcity, not benchmark price direction. Firm rights have premium value relative to uncontracted capacity.</p></div>
+      <div class="opp-field"><label>Who Is Best Positioned</label><p>Firm transport holders with rights that can be utilized, optimized, or commercially leveraged this week.</p></div>
+      <div class="rma-block mod-barrier">
+        <div class="rma-label mod-barrier">Required Market Access</div>
+        <div class="rma-text">Firm takeaway, capacity release capability, or border-linked rights. An active counterparty need for the path value during the same prompt window is also required.</div>
+      </div>
+      <div class="gate-row">
+        <div class="gate-item"><label>Gating Condition</label><p>There must be an active counterparty need for the path value during the prompt window for monetization to occur.</p></div>
+        <div class="gate-item"><label>Timing Window</label><p>Prompt week and near-term balancing periods.</p></div>
+      </div>
+      <div class="opp-fail">Primary Failure Risk: Unused rights may not monetize if counterparty demand is weak or nominations cannot align with available path timing.</div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<div class="es-block">
+<div id="wmim-es" style="background:#2A2A2A;color:#E8DCC8;padding:28px 24px;border-radius:8px">
+  <h2 style="color:#C8841A;font-family:Georgia,serif;border-bottom:1px solid #444;padding-bottom:8px;margin-bottom:20px;font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase">Oportunidades de Monetizaci&oacute;n</h2>
+  <div class="opp-grid">
+
+    <div class="opp-card">
+      <div class="snap-badge-row"><span class="badge badge-verified">VERIFICADO</span></div>
+      <div class="opp-title">Captura de Base del P&eacute;rmico &mdash; Ruta de Salida Asegurada Requerida</div>
+      <div class="opp-field"><label>Estructura de Mercado</label><p>Waha negativo frente al Henry Hub y marcadores aguas abajo m&aacute;s d&eacute;biles pero positivos. La diferencia es real pero no universalmente accesible.</p></div>
+      <div class="opp-field"><label>Participante Mejor Posicionado</label><p>Comercializadores transfronterizos con transporte firme y opcionalidad fronteriza ya establecida.</p></div>
+      <div class="rma-block high-barrier">
+        <div class="rma-label high-barrier">Acceso de Mercado Requerido</div>
+        <div class="rma-text">Derechos firmes de evacuaci&oacute;n del P&eacute;rmico m&aacute;s ruta fronteriza verificada y derechos de entrega aguas abajo. Los participantes sin ambos componentes no pueden acceder a esta operaci&oacute;n.</div>
+      </div>
+      <div class="gate-row">
+        <div class="gate-item"><label>Condici&oacute;n de Ejecuci&oacute;n</label><p>La debilidad de cuenca debe persistir y el participante debe tener derechos de ruta utilizables durante la ventana de tiempo.</p></div>
+        <div class="gate-item"><label>Ventana Temporal</label><p>Semana inmediata actual, sujeta a condiciones diarias de ruta y mercado.</p></div>
+      </div>
+      <div class="opp-fail">Riesgo Principal de Fallo: Sin derechos de ruta, fricci&oacute;n operativa, fallo de nominaci&oacute;n, o un alza s&uacute;bita en el precio de cuenca elimina la oportunidad.</div>
+    </div>
+
+    <div class="opp-card">
+      <div class="snap-badge-row"><span class="badge badge-verified">VERIFICADO</span></div>
+      <div class="opp-title">Procura Inmediata Ligada al Henry Hub &mdash; Ventana de Precio de Referencia D&eacute;bil</div>
+      <div class="opp-field"><label>Estructura de Mercado</label><p>El almacenamiento holgado y la ca&iacute;da semanal del Henry Hub spot crean un entorno favorable para compradores con contratos ligados al precio de referencia.</p></div>
+      <div class="opp-field"><label>Participante Mejor Posicionado</label><p>Grandes compradores industriales con contratos de suministro ligados al precio de referencia donde las contrapartes trasladan la debilidad spot.</p></div>
+      <div class="rma-block mod-barrier">
+        <div class="rma-label mod-barrier">Acceso de Mercado Requerido</div>
+        <div class="rma-text">Ruta de entrega contratada existente a trav&eacute;s de un comercializador activo o cadena de suministro ligada a una empresa de distribuci&oacute;n. El contrato debe cotizar sobre el Henry Hub o un derivado del precio de referencia.</div>
+      </div>
+      <div class="gate-row">
+        <div class="gate-item"><label>Condici&oacute;n de Ejecuci&oacute;n</label><p>La contraparte debe cotizar efectivamente sobre el precio de referencia y mantener disponibilidad de ruta confiable durante la ventana de compra.</p></div>
+        <div class="gate-item"><label>Ventana Temporal</label><p>Compras de corto plazo hasta el pr&oacute;ximo ciclo de reporte.</p></div>
+      </div>
+      <div class="opp-fail">Riesgo Principal de Fallo: Los complementos de base o las fricciones de ruta del proveedor absorben la mejora del precio de referencia antes de que llegue al comprador.</div>
+    </div>
+
+    <div class="opp-card">
+      <div class="snap-badge-row"><span class="badge badge-verified">VERIFICADO</span></div>
+      <div class="opp-title">Monetizaci&oacute;n de Transporte Firme &mdash; Valor de Ruta Sobre Direcci&oacute;n de Precio</div>
+      <div class="opp-field"><label>Estructura de Mercado</label><p>La distorsi&oacute;n semanal m&aacute;s fuerte es la escasez de acceso f&iacute;sico, no la direcci&oacute;n del precio de referencia. Los derechos firmes tienen valor premium frente a la capacidad sin contrato.</p></div>
+      <div class="opp-field"><label>Participante Mejor Posicionado</label><p>Tenedores de transporte firme con derechos que pueden utilizarse, optimizarse o aprovecharse comercialmente esta semana.</p></div>
+      <div class="rma-block mod-barrier">
+        <div class="rma-label mod-barrier">Acceso de Mercado Requerido</div>
+        <div class="rma-text">Evacuaci&oacute;n firme, capacidad de liberaci&oacute;n de transporte, o derechos vinculados a la frontera. Tambi&eacute;n se requiere una necesidad activa de contraparte para el valor de la ruta durante la misma ventana inmediata.</div>
+      </div>
+      <div class="gate-row">
+        <div class="gate-item"><label>Condici&oacute;n de Ejecuci&oacute;n</label><p>Debe existir una necesidad activa de contraparte para el valor de la ruta durante la ventana inmediata para que ocurra la monetizaci&oacute;n.</p></div>
+        <div class="gate-item"><label>Ventana Temporal</label><p>Semana inmediata y per&iacute;odos de balance de corto plazo.</p></div>
+      </div>
+      <div class="opp-fail">Riesgo Principal de Fallo: Los derechos no utilizados pueden no monetizarse si la demanda de la contraparte es d&eacute;bil o las nominaciones no pueden alinearse con el calendario de disponibilidad de ruta.</div>
+    </div>
+
+  </div>
+</div>
+</div>
+</div>
+
+<!-- WHAT COULD BREAK THIS THESIS -->
+<div class="section">
+  <div class="en-block">
+    <h2 class="sec-title">What Could Break This Thesis</h2>
+    <div class="break-grid">
+      <div class="break-card">
+        <div class="break-trigger">Access Risk: Path Overreach</div>
+        <div class="break-body">Participants may overread basin weakness as a delivered opportunity and assume they can capture distressed gas without verified path rights. If access assumptions are wrong, the trade has no margin.</div>
+        <div class="break-monitor">Monitor: Daily path conditions, nominations, and counterparty deliverability.</div>
+        <div style="margin-top:8px"><strong>Most Affected:</strong> Buyers without firm path rights &nbsp;<span class="badge badge-verified" style="font-size:.58rem">VERIFIED</span></div>
+      </div>
+      <div class="break-card">
+        <div class="break-trigger">Benchmark Risk: Storage or Weather Surprise</div>
+        <div class="break-body">A new storage or weather surprise could shift Henry Hub direction faster than current softness suggests. The next EIA report (April 16) is the primary near-term trigger. A miss versus consensus could rapidly change prompt procurement logic.</div>
+        <div class="break-monitor">Monitor: Next EIA storage report (Apr 16) and revised demand forecasts.</div>
+        <div style="margin-top:8px"><strong>Most Affected:</strong> Unhedged industrial buyers and short prompt desks &nbsp;<span class="badge badge-verified" style="font-size:.58rem">VERIFIED</span></div>
+      </div>
+      <div class="break-card">
+        <div class="break-trigger">Administrative Access Risk: MAC 2026C2 Misread</div>
+        <div class="break-body">Participants may miss the MAC 2026C2 window entirely, or misread it as providing immediate executable access. The process closing does not create current-week deliverability. Treating it as a live supply event would be a commercial error.</div>
+        <div class="break-monitor">Monitor: Official CENAGAS process dates and subsequent allocation disclosures.</div>
+        <div style="margin-top:8px"><strong>Most Affected:</strong> Prospective cross-border entrants and late filing shippers &nbsp;<span class="badge badge-verified" style="font-size:.58rem">VERIFIED</span></div>
+      </div>
+    </div>
+    <div class="data-gaps">
+      <span class="gap-badge gap-comp">COMPARABILITY GAP: No pub-grade Waha cash comparable print retrieved</span>
+      <span class="gap-badge gap-data">DATA GAP: No weekly physical flow data for named U.S.-Mexico border crossings</span>
+      <span class="gap-badge gap-access">ACCESS GAP: No verified newly available border rights from MAC process</span>
+      <span class="gap-badge gap-data">DATA GAP: No pub-grade transport rate reference retrievable for Section 7</span>
+    </div>
+  </div>
+  <div class="es-block">
+    <h2 class="sec-title">Qu&eacute; Podr&iacute;a Invalidar Esta Tesis</h2>
+    <div class="break-grid">
+      <div class="break-card">
+        <div class="break-trigger">Riesgo de Acceso: Sobreestimaci&oacute;n de Ruta</div>
+        <div class="break-body">Los participantes pueden sobrestimar la debilidad de la cuenca como una oportunidad de entrega y asumir que pueden capturar gas deteriorado sin derechos de ruta verificados. Si los supuestos de acceso son incorrectos, la operaci&oacute;n no tiene margen.</div>
+        <div class="break-monitor">Seguimiento: Condiciones diarias de ruta, nominaciones y capacidad de entrega de la contraparte.</div>
+        <div style="margin-top:8px"><strong>M&aacute;s Afectados:</strong> Compradores sin derechos de ruta firme &nbsp;<span class="badge badge-verified" style="font-size:.58rem">VERIFICADO</span></div>
+      </div>
+      <div class="break-card">
+        <div class="break-trigger">Riesgo de Precio de Referencia: Sorpresa en Almacenamiento o Clima</div>
+        <div class="break-body">Una sorpresa en el almacenamiento o el clima podr&iacute;a cambiar la direcci&oacute;n del Henry Hub m&aacute;s r&aacute;pido de lo que la debilidad actual sugiere. El pr&oacute;ximo reporte de la EIA (16 de abril) es el principal catalizador de corto plazo.</div>
+        <div class="break-monitor">Seguimiento: Pr&oacute;ximo reporte de almacenamiento EIA (16 abr) y pron&oacute;sticos de demanda revisados.</div>
+        <div style="margin-top:8px"><strong>M&aacute;s Afectados:</strong> Compradores industriales sin cobertura y posiciones cortas en el mercado inmediato &nbsp;<span class="badge badge-verified" style="font-size:.58rem">VERIFICADO</span></div>
+      </div>
+      <div class="break-card">
+        <div class="break-trigger">Riesgo Administrativo: Malinterpretaci&oacute;n del MAC 2026C2</div>
+        <div class="break-body">Los participantes pueden perder la ventana MAC 2026C2 o malinterpretarla como acceso ejecutable inmediato. El cierre del proceso no crea capacidad entregable en la semana actual. Tratarlo como un evento de suministro en tiempo real ser&iacute;a un error comercial.</div>
+        <div class="break-monitor">Seguimiento: Fechas oficiales del proceso CENAGAS y divulgaciones posteriores de asignaci&oacute;n.</div>
+        <div style="margin-top:8px"><strong>M&aacute;s Afectados:</strong> Nuevos entrantes transfronterizos y solicitantes tard&iacute;os &nbsp;<span class="badge badge-verified" style="font-size:.58rem">VERIFICADO</span></div>
+      </div>
+    </div>
+    <div class="data-gaps">
+      <span class="gap-badge gap-comp">BRECHA DE COMPARABILIDAD: Sin precio comparable publicado para Waha cash</span>
+      <span class="gap-badge gap-data">BRECHA DE DATOS: Sin datos semanales de flujo f&iacute;sico para cruces fronterizos EE.UU.-M&eacute;xico</span>
+      <span class="gap-badge gap-access">BRECHA DE ACCESO: Sin derechos fronterizos nuevamente disponibles verificados del proceso MAC</span>
+      <span class="gap-badge gap-data">BRECHA DE DATOS: Sin referencia de tarifa de transporte de fuente publicada para el periodo</span>
+    </div>
+  </div>
+</div>
+
+<!-- TRADE OF THE WEEK + RISK RADAR -->
+<div class="section">
+  <div class="en-block">
+    <h2 class="sec-title">Trade of the Week + Risk Radar</h2>
+    <div class="totw-grid">
+      <div class="totw-card" style="border-left:3px solid #888">
+        <div class="totw-label">Trade of the Week &mdash; <span style="color:#888">HIGH EXECUTION DIFFICULTY &middot; MEDIUM CONVICTION</span></div>
+        <div class="totw-title">Access-Controlled Permian to Downstream Capture</div>
+        <div class="totw-field"><label>Setup</label><p>Use existing firm takeaway and border optionality to convert distressed Permian gas into downstream commercial value where nominations and counterparties are already lined up. The entry case depends on persistent negative Waha conditions combined with functioning downstream demand and usable path rights.</p></div>
+        <div class="totw-rma">
+          <label>Required Market Access</label>
+          <p>Firm Permian takeaway plus verified border or downstream delivery rights. Participants without both cannot enter this trade at any price level.</p>
+        </div>
+        <div class="totw-field"><label>Gating Conditions</label><p>Persistent basin distress, firm path availability, executable nominations, and a counterparty structure that allows margin capture. All four must be present simultaneously.</p></div>
+        <div class="totw-economics">Indicative Economics: Directional only. The setup relies on a severe basin discount versus softer downstream markers. No publication-grade current corridor netback was retrievable this run.</div>
+        <div class="totw-field"><label>Catalyst</label><p>Continued negative Waha and no current-week structural relief in basin evacuation.</p></div>
+        <div class="totw-field"><label>Risk</label><p>Route friction, nomination failure, basis compression, or unverified downstream demand. The opportunity disappears if access is interrupted or if the basin discount narrows before delivery.</p></div>
+        <div class="totw-field"><label>Who Can Realistically Execute</label><p>Experienced marketers, integrated producers, and transport holders with real path control.</p></div>
+        <div class="conviction-row">
+          <div class="conv-item"><label>Execution Difficulty</label><p style="color:#CC0000">HIGH</p></div>
+          <div class="conv-item"><label>Commercial Conviction</label><p style="color:#C8841A">MEDIUM</p></div>
+          <div class="conv-item"><label>Timeline</label><p>Prompt week</p></div>
+        </div>
+      </div>
+      <div>
+        <div class="risk-card">
+          <div class="risk-type">Access Risk</div>
+          <div class="risk-title">Path Overreach by Unqualified Participants</div>
+          <div class="risk-body">Buyers without firm path rights may assume they can capture distressed Permian gas for downstream delivery. The trade has no viable margin without verified route access. Monitor: daily path conditions and counterparty deliverability.</div>
+        </div>
+        <div class="risk-card">
+          <div class="risk-type">Benchmark Risk</div>
+          <div class="risk-title">Storage or Weather Surprise Shifts HH Direction</div>
+          <div class="risk-body">A single EIA miss or unexpected cold event could reverse benchmark softness quickly. Primary trigger: next EIA storage report, April 16. Monitor: storage versus consensus and short-term weather forecasts.</div>
+        </div>
+        <div class="risk-card">
+          <div class="risk-type">Administrative Access Risk</div>
+          <div class="risk-title">MAC 2026C2 Deadline Misread as Executable</div>
+          <div class="risk-body">The April 27 deadline is for access positioning, not current-week deliverability. Participants who confuse administrative access planning with live supply availability may make procurement decisions on incorrect premises. Monitor: official CENAGAS allocation disclosures post-window.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="es-block">
+    <h2 class="sec-title">Operaci&oacute;n de la Semana + Radar de Riesgos</h2>
+    <div class="totw-grid">
+      <div class="totw-card" style="border-left:3px solid #888">
+        <div class="totw-label">Operaci&oacute;n de la Semana &mdash; <span style="color:#888">DIFICULTAD DE EJECUCI&Oacute;N ALTA &middot; CONVICCI&Oacute;N MEDIA</span></div>
+        <div class="totw-title">Captura del P&eacute;rmico a Destinos Aguas Abajo con Control de Acceso</div>
+        <div class="totw-field"><label>Esquema</label><p>Usar el transporte firme existente y la opcionalidad fronteriza para convertir el gas deteriorado del P&eacute;rmico en valor comercial aguas abajo, donde las nominaciones y las contrapartes ya est&eacute;n alineadas. El caso de entrada depende de condiciones Waha negativas persistentes combinadas con demanda aguas abajo operativa y derechos de ruta utilizables.</p></div>
+        <div class="totw-rma">
+          <label>Acceso de Mercado Requerido</label>
+          <p>Evacuaci&oacute;n firme del P&eacute;rmico m&aacute;s derechos de entrega fronteriza o aguas abajo verificados. Los participantes sin ambos componentes no pueden acceder a esta operaci&oacute;n a ning&uacute;n nivel de precio.</p>
+        </div>
+        <div class="totw-field"><label>Condiciones de Ejecuci&oacute;n</label><p>Deterioro persistente de la cuenca, disponibilidad de ruta firme, nominaciones ejecutables y estructura de contraparte que permita capturar margen. Los cuatro deben estar presentes simult&aacute;neamente.</p></div>
+        <div class="totw-economics">Econom&iacute;a Indicativa: Solo direccional. El esquema depende de un descuento severo de cuenca frente a marcadores aguas abajo m&aacute;s d&eacute;biles. No se obtuvo margen neto de corredor de fuente publicada en esta edici&oacute;n.</div>
+        <div class="totw-field"><label>Catalizador</label><p>Waha continuo en negativo y sin alivio estructural de evacuaci&oacute;n de cuenca en la semana actual.</p></div>
+        <div class="totw-field"><label>Riesgo</label><p>Fricci&oacute;n de ruta, fallo de nominaci&oacute;n, compresi&oacute;n de base, o demanda aguas abajo no verificada. La oportunidad desaparece si el acceso se interrumpe o si el descuento de cuenca se estrecha antes de la entrega.</p></div>
+        <div class="totw-field"><label>Qui&eacute;n Puede Ejecutar Realmente</label><p>Comercializadores con experiencia, productores integrados y tenedores de transporte con control real de ruta.</p></div>
+        <div class="conviction-row">
+          <div class="conv-item"><label>Dificultad de Ejecuci&oacute;n</label><p style="color:#CC0000">ALTA</p></div>
+          <div class="conv-item"><label>Convicci&oacute;n Comercial</label><p style="color:#C8841A">MEDIA</p></div>
+          <div class="conv-item"><label>Horizonte</label><p>Semana inmediata</p></div>
+        </div>
+      </div>
+      <div>
+        <div class="risk-card">
+          <div class="risk-type">Riesgo de Acceso</div>
+          <div class="risk-title">Sobreestimaci&oacute;n de Ruta por Participantes Sin Calificaci&oacute;n</div>
+          <div class="risk-body">Compradores sin derechos de ruta firme pueden asumir que pueden capturar gas deteriorado del P&eacute;rmico para entrega aguas abajo. La operaci&oacute;n no tiene margen viable sin acceso de ruta verificado. Seguimiento: condiciones diarias de ruta y capacidad de entrega de contraparte.</div>
+        </div>
+        <div class="risk-card">
+          <div class="risk-type">Riesgo de Precio de Referencia</div>
+          <div class="risk-title">Sorpresa en Almacenamiento o Clima Cambia Direcci&oacute;n del HH</div>
+          <div class="risk-body">Un resultado inesperado en la EIA o un evento de fr&iacute;o podr&iacute;a revertir r&aacute;pidamente la debilidad del precio de referencia. Catalizador principal: pr&oacute;ximo reporte de almacenamiento EIA, 16 de abril. Seguimiento: almacenamiento frente al consenso y pron&oacute;sticos de clima de corto plazo.</div>
+        </div>
+        <div class="risk-card">
+          <div class="risk-type">Riesgo Administrativo</div>
+          <div class="risk-title">Fecha L&iacute;mite MAC 2026C2 Confundida con Acceso Ejecutable</div>
+          <div class="risk-body">La fecha l&iacute;mite del 27 de abril es para posicionamiento de acceso, no para capacidad entregable en la semana actual. Los participantes que confundan planificaci&oacute;n administrativa con suministro disponible pueden tomar decisiones de procura con supuestos incorrectos. Seguimiento: divulgaciones oficiales de asignaci&oacute;n de CENAGAS posteriores al cierre.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LONE STAR INSIGHT + FORWARD VIEW -->
+<div class="section">
+  <div class="en-block">
+    <h2 class="sec-title">Lone Star Insight + Forward View</h2>
+    <div id="lsi">
+      <div class="lsi-bold">The best gas trade this week is not a benchmark position. It is a route access position.</div>
+      <div class="lsi-insights">
+        <div class="lsi-insight">
+          <div class="lsi-insight-title">Primary Scarcity Is Path, Not Molecules</div>
+          <div class="lsi-insight-body">Negative Waha, soft Henry Hub, and comfortable storage all point to the same conclusion: the molecule supply is not scarce. The scarcity is in controllable outbound path. The spread between trapped basin gas and deliverable downstream value favors firms that already hold movement rights on Permian takeaway or SISTRANGAS border segments.</div>
+        </div>
+        <div class="lsi-insight">
+          <div class="lsi-insight-title">Mexico Relevance Increased Administratively, Not Yet Operationally</div>
+          <div class="lsi-insight-body">The MAC 2026C2 process is live. This matters for future route optionality through SISTRANGAS, but should not be marketed as current-week executable supply relief. Administrative timing in Mexico can shape commercial position before any physical relief is visible. File now, monetize later.</div>
+        </div>
+      </div>
+      <div class="lsi-takeaway">Non-obvious operator takeaway: a soft Henry Hub does not neutralize the value of firm transport when basin gas remains trapped. And administrative timing in Mexico can matter commercially before any physical relief is visible.</div>
+      <table class="fwd-table" style="margin-top:16px">
+        <thead>
+          <tr><th>Event</th><th>Date / Timing</th><th>What to Watch</th><th>If Confirmed</th><th>Most Exposed Participant</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Next EIA Storage Report</td>
+            <td>April 16, 2026</td>
+            <td>Whether next injection keeps storage comfortably above seasonal norms.</td>
+            <td>Prompt softness bias remains intact; limits urgency for outright bullish procurement.</td>
+            <td>Benchmark traders, industrial buyers</td>
+          </tr>
+          <tr>
+            <td>CENAGAS MAC 2026C2 Application Deadline</td>
+            <td>April 27, 2026</td>
+            <td>Whether participants complete filings and how the process shapes later access options.</td>
+            <td>Future access planning becomes more binary and participant-specific after window closes.</td>
+            <td>Cross-border marketers, Mexico supply planners</td>
+          </tr>
+          <tr>
+            <td>EIA Monthly Exports to Mexico Release</td>
+            <td>~April 30, 2026</td>
+            <td>Whether February 2026 export data changes structural dependence context.</td>
+            <td>Structural demand context strengthens or softens; still not a weekly corridor signal.</td>
+            <td>Cross-border strategists, market analysts</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="es-block">
+    <h2 class="sec-title">Perspectiva Lone Star + Vista al Futuro</h2>
+    <div id="lsi-es" style="background:#1C1208;color:#E8DCC8;border-radius:8px;padding:24px">
+      <div class="lsi-bold">La mejor operaci&oacute;n de gas esta semana no es una posici&oacute;n de precio de referencia. Es una posici&oacute;n de acceso a ruta.</div>
+      <div class="lsi-insights">
+        <div class="lsi-insight">
+          <div class="lsi-insight-title">La Escasez Principal Es de Ruta, No de Mol&eacute;culas</div>
+          <div class="lsi-insight-body">El Waha negativo, el Henry Hub d&eacute;bil y el almacenamiento holgado apuntan a la misma conclusi&oacute;n: el suministro de mol&eacute;culas no es escaso. La escasez est&aacute; en la ruta de salida controlable. La diferencia entre el gas atrapado en cuenca y el valor entregable aguas abajo favorece a las empresas que ya tienen derechos de movimiento en evacuaci&oacute;n del P&eacute;rmico o segmentos fronterizos del SISTRANGAS.</div>
+        </div>
+        <div class="lsi-insight">
+          <div class="lsi-insight-title">La Relevancia de M&eacute;xico Aument&oacute; Administrativamente, A&uacute;n No Operativamente</div>
+          <div class="lsi-insight-body">El proceso MAC 2026C2 est&aacute; activo. Esto importa para la opcionalidad de ruta futura a trav&eacute;s del SISTRANGAS, pero no debe presentarse como alivio de suministro ejecutable en la semana actual. El calendario administrativo en M&eacute;xico puede dar forma a la posici&oacute;n comercial antes de que ning&uacute;n alivio f&iacute;sico sea visible. Presentar la solicitud ahora, monetizar despu&eacute;s.</div>
+        </div>
+      </div>
+      <div class="lsi-takeaway">Punto clave para operadores: un Henry Hub d&eacute;bil no neutraliza el valor del transporte firme cuando el gas de cuenca sigue atrapado. Y el calendario administrativo en M&eacute;xico puede tener peso comercial antes de que ning&uacute;n alivio f&iacute;sico sea visible.</div>
+      <table class="fwd-table" style="margin-top:16px">
+        <thead>
+          <tr><th>Evento</th><th>Fecha / Calendario</th><th>Qu&eacute; Seguir</th><th>Si Se Confirma</th><th>Participante M&aacute;s Expuesto</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pr&oacute;ximo Reporte de Almacenamiento EIA</td>
+            <td>16 de abril de 2026</td>
+            <td>Si la siguiente inyecci&oacute;n mantiene el almacenamiento por encima de la norma estacional.</td>
+            <td>El sesgo de holgura inmediata se mantiene; limita la urgencia de procura alcista.</td>
+            <td>Operadores de precio de referencia, compradores industriales</td>
+          </tr>
+          <tr>
+            <td>Fecha L&iacute;mite Solicitud CENAGAS MAC 2026C2</td>
+            <td>27 de abril de 2026</td>
+            <td>Si los participantes completan sus solicitudes y c&oacute;mo el proceso define opciones de acceso futuras.</td>
+            <td>La planificaci&oacute;n de acceso futuro se vuelve m&aacute;s binaria y espec&iacute;fica por participante despu&eacute;s del cierre.</td>
+            <td>Comercializadores transfronterizos, planificadores de suministro para M&eacute;xico</td>
+          </tr>
+          <tr>
+            <td>Publicaci&oacute;n EIA de Exportaciones Mensuales a M&eacute;xico</td>
+            <td>~30 de abril de 2026</td>
+            <td>Si los datos de febrero 2026 cambian el contexto de dependencia estructural.</td>
+            <td>El contexto de demanda estructural se fortalece o debilita; a&uacute;n no es una se&ntilde;al de corredor semanal.</td>
+            <td>Estrategas transfronterizos, analistas de mercado</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div id="cta">
+  <div class="en-block">For direct consultation on cross-border gas procurement or transport positioning, contact <a href="https://LoneStarEnergyGroup.com">Lone Star Energy Group</a>.</div>
+  <div class="es-block">Para consultor&iacute;a directa sobre posicionamiento de gas transfronterizo o estrategia de transporte, contacte a <a href="https://LoneStarEnergyGroup.com">Lone Star Energy Group</a>.</div>
+</div>
+
+</div><!-- .wrapper -->
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="en-block">
+    <a href="https://LoneStarEnergyGroup.com">LoneStarEnergyGroup.com</a> &nbsp;&middot;&nbsp; &copy; 2026 Lone Star Energy Group LLC. All rights reserved.
+    <div style="font-size:0.72rem;color:#666;margin:6px 0 2px 0;font-family:Arial,Helvetica,sans-serif;">Original editorial analysis by Jose O. Lejarza for Lone Star Energy Group.</div>
+    <div style="margin-top:6px;font-size:.72rem;color:#888">This publication is for informational purposes only. It does not constitute financial, legal, or commercial advice. All market data is sourced from publicly available third-party sources; Lone Star Energy Group makes no representations regarding its accuracy or completeness. Past market conditions are not indicative of future results. Recipients should conduct their own due diligence before making commercial or investment decisions.</div>
+  </div>
+  <div class="es-block">
+    <a href="https://LoneStarEnergyGroup.com">LoneStarEnergyGroup.com</a> &nbsp;&middot;&nbsp; &copy; 2026 Lone Star Energy Group LLC. Todos los derechos reservados.
+    <div style="font-size:0.72rem;color:#666;margin:6px 0 2px 0;font-family:Arial,Helvetica,sans-serif;">An&aacute;lisis editorial original por Jose O. Lejarza para Lone Star Energy Group.</div>
+    <div style="margin-top:6px;font-size:.72rem;color:#888">Esta publicaci&oacute;n tiene fines informativos &uacute;nicamente. No constituye asesor&iacute;a financiera, legal ni comercial. Todos los datos de mercado provienen de fuentes de terceros disponibles p&uacute;blicamente; Lone Star Energy Group no hace representaciones sobre su exactitud o integridad. Las condiciones de mercado pasadas no son indicativas de resultados futuros. Los destinatarios deben realizar su propia diligencia debida antes de tomar decisiones comerciales o de inversi&oacute;n.</div>
+  </div>
+</footer>
+
+<script>
+// LANG TOGGLE — iOS Safari file:// safe (v12.1)
+// iOS Safari on file:// blocks localStorage and can misfire DOMContentLoaded.
+// Strategy: use CSS class on <html> (not body), inline style overrides,
+// and multiple redundant event hooks so at least one fires.
+
+var LSEG_LANG = 'en';
+
+function setLang(lang) {
+  LSEG_LANG = lang;
+
+  // Toggle on both <html> and <body> for maximum compatibility
+  var h = document.documentElement;
+  var b = document.body;
+  if (!h || !b) return;
+
+  if (lang === 'es') {
+    // Use both className string replace AND setAttribute for iOS compatibility
+    b.className = (b.className || '').replace(/\bes-active\b/, '').replace(/\s+$/, '') + ' es-active';
+  } else {
+    b.className = (b.className || '').replace(/\bes-active\b/, '').replace(/\s+$/, '');
+  }
+
+  // Button states — use className manipulation, not classList (safer on old iOS)
+  var enBtn = document.getElementById('en-btn');
+  var esBtn = document.getElementById('es-btn');
+  if (enBtn) {
+    enBtn.className = lang === 'en' ? 'lb active' : 'lb';
+  }
+  if (esBtn) {
+    esBtn.className = lang === 'es' ? 'lb active' : 'lb';
+  }
+
+  // Ticker visibility — direct style, no classList
+  var tEN = document.getElementById('ticker-en');
+  var tES = document.getElementById('ticker-es');
+  if (tEN) tEN.style.display = (lang === 'es') ? 'none' : 'flex';
+  if (tES) tES.style.display = (lang === 'es') ? 'flex' : 'none';
+
+  // Persist — wrapped so iOS file:// silently fails without breaking anything
+  try { localStorage.setItem('lseg-lang', lang); } catch(e) {}
+}
+
+// Make globally accessible immediately — before any event
+window.setLang = setLang;
+
+// Init function — reads saved preference and applies it
+function lsegInit() {
+  var saved = 'en';
+  try { saved = localStorage.getItem('lseg-lang') || 'en'; } catch(e) {}
+  setLang(saved);
+}
+
+// Fire init through every possible hook — at least one will work on iOS file://
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+  lsegInit();
+} else {
+  document.addEventListener('DOMContentLoaded', lsegInit);
+  window.addEventListener('load', lsegInit);
+}
+// Belt-and-suspenders: also fire after a short delay in case all events misfired
+setTimeout(lsegInit, 100);
+</script>
+</body>
+</html>

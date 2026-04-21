@@ -11,6 +11,9 @@
 body.es-active .en-block  { display: none !important; }
 body.es-active .en-inline { display: none !important; }
 body.es-active .es-block  { display: block !important; }
+body.es-active #ticker .es-block { display: flex !important; }
+#ticker .en-block { display: flex; }
+body.es-active #ticker .en-block { display: none !important; }
 body.es-active .es-inline { display: inline !important; }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -317,23 +320,43 @@ body.es-active .hdr-meta .es-block{display:block!important}
 
 <!-- TICKER -->
 <div id="ticker">
-<div class="ticker-inner">
+<!-- EN TICKER -->
+<div class="ticker-inner en-block" style="display:flex">
+<span class="ti"><strong>WAHA CASH</strong> NEGATIVE / NO COMPARABLE PRINT AVAILABLE &mdash; LOW CONF. &middot; no comparable print &middot; directional only</span>
+<span class="ti"><strong>HENRY HUB DAILY</strong> $2.79/MMBtu (Apr 13, 2026) &mdash; VERIFIED &middot; NOT DIRECTLY COMPARABLE</span>
+<span class="ti"><strong>HH WEEKLY REF</strong> $2.85/MMBtu wk. Apr 10 &mdash; VERIFIED</span>
+<span class="ti"><strong>WAHA VS HH BASIS</strong> DEEPLY NEGATIVE (ESTIMATED) &mdash; LOW CONF. &middot; directional only</span>
+<span class="ti"><strong>U.S.</strong>&rarr;<strong>MEXICO EXPORTS</strong> ~6.25 Bcf/d avg &mdash; STRUCTURAL CONTEXT ONLY &middot; Jan 2026</span>
+<span class="ti"><strong>EIA STORAGE</strong> 1,970 Bcf &mdash; +59 Bcf WoW &mdash; VERIFIED wk. Apr 10</span>
+<span class="ti"><strong>5-YR AVG CUSHION</strong> +108 Bcf above average</span>
+<span class="ti"><strong>MAC 2026C2 ACCESS WINDOW</strong> open through Apr 27 &mdash; LOW CONF.</span>
+<span class="ti"><strong>WAHA CASH</strong> NEGATIVE / NO COMPARABLE PRINT AVAILABLE &mdash; LOW CONF. &middot; no comparable print &middot; directional only</span>
+<span class="ti"><strong>HENRY HUB DAILY</strong> $2.79/MMBtu (Apr 13, 2026) &mdash; VERIFIED &middot; NOT DIRECTLY COMPARABLE</span>
+<span class="ti"><strong>HH WEEKLY REF</strong> $2.85/MMBtu wk. Apr 10 &mdash; VERIFIED</span>
+<span class="ti"><strong>WAHA VS HH BASIS</strong> DEEPLY NEGATIVE (ESTIMATED) &mdash; LOW CONF. &middot; directional only</span>
+<span class="ti"><strong>U.S.</strong>&rarr;<strong>MEXICO EXPORTS</strong> ~6.25 Bcf/d avg &mdash; STRUCTURAL CONTEXT ONLY &middot; Jan 2026</span>
+<span class="ti"><strong>EIA STORAGE</strong> 1,970 Bcf &mdash; +59 Bcf WoW &mdash; VERIFIED wk. Apr 10</span>
+<span class="ti"><strong>5-YR AVG CUSHION</strong> +108 Bcf above average</span>
+<span class="ti"><strong>MAC 2026C2 ACCESS WINDOW</strong> open through Apr 27 &mdash; LOW CONF.</span>
+</div>
+<!-- ES TICKER -->
+<div class="ticker-inner es-block" style="display:none">
 <span class="ti"><strong>WAHA CASH</strong> NEGATIVO / SIN PRECIO COMPARABLE DISPONIBLE &mdash; BAJA CONF. &middot; sin precio comparable &middot; solo direccional</span>
-<span class="ti"><strong>HENRY HUB DIARIO</strong> $2.79/MMBtu (13 abr 2026) &mdash; <span class="en-inline">VERIFIED</span><span class="es-inline">VERIFICADO</span> &middot; NOT DIRECTLY COMPARABLE</span>
-<span class="ti"><strong>HH WEEKLY REF</strong> $2.85/MMBtu wk. apr 10 &mdash; <span class="en-inline">VERIFIED</span><span class="es-inline">VERIFICADO</span></span>
-<span class="ti"><strong>WAHA VS HH BASIS</strong> DEEPLY NEGATIVE (ESTIMATED) &mdash; BAJA CONF. &middot; solo direccional</span>
-<span class="ti"><strong>U.S.</strong>&rarr;<strong>MEXICO EXPORTS</strong> ~6.25 Bcf/d avg &mdash; <span class="en-inline">STRUCTURAL CONTEXT ONLY &middot; Jan 2026</span><span class="es-inline">CONTEXTO ESTRUCTURAL &middot; ene 2026</span></span>
-<span class="ti"><strong>EIA STORAGE</strong> 1,970 Bcf &mdash; +59 Bcf WoW &mdash; <span class="en-inline">VERIFIED wk. Apr 10</span><span class="es-inline">VERIFICADO sem. 10 abr</span></span>
-<span class="ti"><strong>5-YR AVG CUSHION</strong> +108 Bcf <span class="en-inline">above average</span><span class="es-inline">sobre promedio</span></span>
-<span class="ti"><strong>MAC 2026C2 ACCESS WINDOW</strong> <span class="en-inline">open through Apr 27 &mdash; LOW CONF.</span><span class="es-inline">abierto hasta el 27 abr &mdash; BAJA CONF.</span></span>
+<span class="ti"><strong>HENRY HUB DIARIO</strong> $2.79/MMBtu (13 abr 2026) &mdash; VERIFICADO &middot; NO COMPARABLE DIRECTAMENTE</span>
+<span class="ti"><strong>REF. SEMANAL HH</strong> $2.85/MMBtu sem. 10 abr &mdash; VERIFICADO</span>
+<span class="ti"><strong>BASE WAHA VS HH</strong> MUY NEGATIVA (ESTIMADA) &mdash; BAJA CONF. &middot; solo direccional</span>
+<span class="ti"><strong>EE. UU.</strong>&rarr;<strong>EXPORTACIONES M&Eacute;XICO</strong> ~6.25 Bcf/d prom. &mdash; CONTEXTO ESTRUCTURAL &middot; ene 2026</span>
+<span class="ti"><strong>ALMACENAMIENTO EIA</strong> 1,970 Bcf &mdash; +59 Bcf semanal &mdash; VERIFICADO sem. 10 abr</span>
+<span class="ti"><strong>EXCEDENTE PROM. 5 A&Ntilde;OS</strong> +108 Bcf sobre el promedio</span>
+<span class="ti"><strong>VENTANA MAC 2026C2</strong> abierta hasta el 27 abr &mdash; BAJA CONF.</span>
 <span class="ti"><strong>WAHA CASH</strong> NEGATIVO / SIN PRECIO COMPARABLE DISPONIBLE &mdash; BAJA CONF. &middot; sin precio comparable &middot; solo direccional</span>
-<span class="ti"><strong>HENRY HUB DIARIO</strong> $2.79/MMBtu (13 abr 2026) &mdash; <span class="en-inline">VERIFIED</span><span class="es-inline">VERIFICADO</span> &middot; NOT DIRECTLY COMPARABLE</span>
-<span class="ti"><strong>HH WEEKLY REF</strong> $2.85/MMBtu wk. apr 10 &mdash; <span class="en-inline">VERIFIED</span><span class="es-inline">VERIFICADO</span></span>
-<span class="ti"><strong>WAHA VS HH BASIS</strong> DEEPLY NEGATIVE (ESTIMATED) &mdash; BAJA CONF. &middot; solo direccional</span>
-<span class="ti"><strong>U.S.</strong>&rarr;<strong>MEXICO EXPORTS</strong> ~6.25 Bcf/d avg &mdash; <span class="en-inline">STRUCTURAL CONTEXT ONLY &middot; Jan 2026</span><span class="es-inline">CONTEXTO ESTRUCTURAL &middot; ene 2026</span></span>
-<span class="ti"><strong>EIA STORAGE</strong> 1,970 Bcf &mdash; +59 Bcf WoW &mdash; <span class="en-inline">VERIFIED wk. Apr 10</span><span class="es-inline">VERIFICADO sem. 10 abr</span></span>
-<span class="ti"><strong>5-YR AVG CUSHION</strong> +108 Bcf <span class="en-inline">above average</span><span class="es-inline">sobre promedio</span></span>
-<span class="ti"><strong>MAC 2026C2 ACCESS WINDOW</strong> <span class="en-inline">open through Apr 27 &mdash; LOW CONF.</span><span class="es-inline">abierto hasta el 27 abr &mdash; BAJA CONF.</span></span>
+<span class="ti"><strong>HENRY HUB DIARIO</strong> $2.79/MMBtu (13 abr 2026) &mdash; VERIFICADO &middot; NO COMPARABLE DIRECTAMENTE</span>
+<span class="ti"><strong>REF. SEMANAL HH</strong> $2.85/MMBtu sem. 10 abr &mdash; VERIFICADO</span>
+<span class="ti"><strong>BASE WAHA VS HH</strong> MUY NEGATIVA (ESTIMADA) &mdash; BAJA CONF. &middot; solo direccional</span>
+<span class="ti"><strong>EE. UU.</strong>&rarr;<strong>EXPORTACIONES M&Eacute;XICO</strong> ~6.25 Bcf/d prom. &mdash; CONTEXTO ESTRUCTURAL &middot; ene 2026</span>
+<span class="ti"><strong>ALMACENAMIENTO EIA</strong> 1,970 Bcf &mdash; +59 Bcf semanal &mdash; VERIFICADO sem. 10 abr</span>
+<span class="ti"><strong>EXCEDENTE PROM. 5 A&Ntilde;OS</strong> +108 Bcf sobre el promedio</span>
+<span class="ti"><strong>VENTANA MAC 2026C2</strong> abierta hasta el 27 abr &mdash; BAJA CONF.</span>
 </div>
 </div>
 
